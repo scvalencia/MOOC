@@ -1,0 +1,105 @@
+Types and classes.
+
+Twose concepts, are two of the most fundamental in Haskell. They allow a programmer to create new types, and understand functional programming in general.
+
+Informally, a type is a collection of values that share at least common property (structural of in definition). More fomrally, it's a collection of related values, for example, the type Bool, contains two values [True, False]. Here, Bool is a type that names the set pf values {True, False}
+
+A type error, is when a function receives values from a type, that were not expected to appear; if e has type t, the e :: t, every expression has a type, and the compiler would try to infer it if it's not expecified. :type calculates the type of an expressiin
+
+:type not False
+not False :: Bool -> Not calculation needded
+
+The base type are:
+
+Bool
+Char
+String
+Int (fixed precision integers)
+Integer (arbitrary precision integers)
+Float
+
+Compound types:
+
+Lists (Generic type, polymorphic types), every element has the same type. [t]
+
+[œ, ø, ƒ, ©, ∂, ∫] :: [t] <=> œ, ø, ƒ, ©, ∂ and ∫ have type t
+The type of elements in unrestricted, it can even be a list of lists
+
+[['a'], ['a', 'g', 'h']] :: [[Char]]
+
+Tuples (A sequence of different values, not all with the same type), they contains the length of the sequence.
+
+(False, True) :: (Bool, Bool)
+
+(False,'a', True) :: (Bool, Char, Bool)
+
+('a', [True, False]) :: (Char, [Bool])
+
+(True, ['a', 'b', 'c']) :: (Bool, [Char])
+
+=================================================
+Function types
+=================================================
+Functions, values and types are fundamental for functional programming
+
+A function is a mapping from values of one type to values of other type
+
+not :: Bool -> Bool, whose type is Bool -> Bool, and that os the type pf every function that maps
+values of Bool to values of Bool
+
+Arguments may be tuples and lists
+
+add :: (Int, Int) -> Int
+add x y = x + y
+
+Arguemtns may be also function
+
+add' :: Int -> (Int -> Int), takes an integer and returns a function that takes an integer, and returns
+an integer. Arrow associates to the right
+
+Functions that takes arguemnts one by one are called curried function (Haskell Curry)
+
+Every function that takes two arguemtns can be turned into a curried function
+
+mutl x y z = x * y * z
+mult :: Int -> (Int -> (Int -> Int))
+
+Why is currying useful?
+
+We can partially apply a function
+
+Int -> Int -> Int -> Int = Int -> (Int -> (Int -> Int))
+mult x y z = ((mult x) y) z
+
+Polymorphic types:
+
+f :: a -> Int, a is a type variable, it can be Int, [Int], (...), Real, Bool, etc.
+
+length :: [a] -> Int
+
+length [False, True] = 2, a = Bool
+length [1,2,3,4,5] = 5, a = Int
+
+fst :: (a, b) -> a
+head :: [a] -> a
+take :: Int -> [a] -> [a]
+zip :: [a] -> [b] -> [(a, b)] = ([a], [b]) -> [(a, b)]
+id :: a -> a
+
+Overloaded functions:
+
+sum :: Num a => [a] -> a, a should be of Num class, it is like
+<T implements Inumber>
+
+sum [1,2,3] -> 6
+sum [1.2, 2.2, 3.3] -> 6.6
+sum ['A', 'B', 'C'] -> ERROR
+
+Haskell has the following type classes:
+	Num
+	Eq
+	Ord (order)
+
+(+) :: Num a => a -> a -> a
+(==) :: Eq a => a -> a -> Bool
+(<) :: Ord a => a -> a -> Bool
