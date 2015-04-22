@@ -1,0 +1,18 @@
+About programming with C#
+
+The C# programming langages was created from the ground up to be an object-oriented programming language
+that offers ease to use, familiarity with C/C++ and Java developers, along with enhanced memory and resource 
+management. C# is prevalent on the Microsoft platform but is also being used to develop software that runs on Linux, 
+Android, and iOS devices as well. C# povides solid foundations on the art of object-oriented programming.
+
+Contents:
+
+* Basic C# data types
+* Control structures in C#
+* Object-oriented programming in C#
+* Methods
+* Complex data structures and generic collections
+* Event handling
+* LINQ (Language integrated query)
+* Multitheading, and parallel programming
+* Asynchronous programming
