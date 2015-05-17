@@ -17,3 +17,6 @@ Real numbers (decimals, or fractions)
 			 currencies)
 	float (fewer bits, smaller range of numbers and exponenets)
 	double
+
+Char
+Boolean
