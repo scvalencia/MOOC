@@ -19,3 +19,4 @@ Real numbers (decimals, or fractions)
 	double
 
 Char
+Boolean
