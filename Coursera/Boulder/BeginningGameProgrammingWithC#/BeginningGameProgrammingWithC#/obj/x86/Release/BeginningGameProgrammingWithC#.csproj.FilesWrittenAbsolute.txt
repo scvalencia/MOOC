@@ -1,0 +1,5 @@
+/Users/scvalencia/Documents/MOOC/MOOC/Coursera/Boulder/BeginningGameProgrammingWithC#/BeginningGameProgrammingWithC#/obj/x86/Release/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/scvalencia/Documents/MOOC/MOOC/Coursera/Boulder/BeginningGameProgrammingWithC#/BeginningGameProgrammingWithC#/bin/Release/BeginningGameProgrammingWithC#.exe.mdb
+/Users/scvalencia/Documents/MOOC/MOOC/Coursera/Boulder/BeginningGameProgrammingWithC#/BeginningGameProgrammingWithC#/bin/Release/BeginningGameProgrammingWithC#.exe
+/Users/scvalencia/Documents/MOOC/MOOC/Coursera/Boulder/BeginningGameProgrammingWithC#/BeginningGameProgrammingWithC#/obj/x86/Release/BeginningGameProgrammingWithC#.exe
+/Users/scvalencia/Documents/MOOC/MOOC/Coursera/Boulder/BeginningGameProgrammingWithC#/BeginningGameProgrammingWithC#/obj/x86/Release/BeginningGameProgrammingWithC#.exe.mdb
