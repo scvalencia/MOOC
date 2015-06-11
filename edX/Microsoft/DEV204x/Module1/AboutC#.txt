@@ -25,6 +25,6 @@ resources for the developer, leading to the concept of managed code. C# uses gar
 memory and resources that are not longer referenced in the application code, helping to prevent memory leak issues.
 
 * Strongly typed: the language enforces type checking on objects on the code meaning it is type-safe
-* Object-oriented
-* Component-oriented
-* Unified type system
+* Object-oriented: C# offers the developer all the tenets of OOP such as encapsulation, inheritance, adn polymorphism
+* Component-oriented: C# allows the creation of software components for self-contained, self-describing packages
+* Unified type system: all C# types, from primitive to reference types, inherit from a single root known as Object
