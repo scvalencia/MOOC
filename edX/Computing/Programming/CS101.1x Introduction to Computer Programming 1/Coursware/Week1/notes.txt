@@ -1,0 +1,62 @@
+Teachers: Deepak Phatak, Supratik Chakraborty
+
+Computers are machines. Line other gadgets, we need to instruct the computer to perform a desired task. This task, is 
+naturally of computing nature. Every computer, requires to perform such a task, a set of instructions and an order of 
+execution for them. The abstract object that tells the computer the instructions and the order of their execution is
+called a program. Another program called a compiler (or machine code interpreter), reads the given program, 
+understand it and then gives to the machine a native language equivalent to the program. The machine executes the 
+program.
+
+In order to provide a computational description of a task to a computer, one must have two tools at hand: a 
+programming language (a language to describe the task), and an algorithm (an often informal description of how to 
+accomplish the task using computational instructions). The task or the algorithm (computational procedure), is a 
+descritpion on what the computer must do to sove a problem. The nature of the problem must be computational.
+
+Example:
+	A tank has been erected in our yard to store water, we want to paint it, to prevent rusting. Given the painting 
+	charges in Rs per sq meter, what will be the cost of painting the entire tank, along with its top cover.
+
+	 ______
+	|\____/| ===> Radius: r; Heigth: h
+	|	   |
+	|	   |
+	\	   /
+	 ------
+
+	 Area Tank = AreaSurface + AreaCover = 2πrh + πr^2
+	 A = 2πrh + πr^2
+	 C = PA
+
+	PROCEDURE SOLVE() IS
+		COMMENT Mise en Place
+		r, h, P := input(), input(), input()
+		A := 2 * π * r * h + π * r * r
+		C := P * A
+		output(C)
+	END PROCEDURE
+
+	The steps of this procedure, includes get from the a potential user the variables (r, h, P).
+	To calculate A given the variables, and C given P and A.
+	to output to the same potentialuser, the final calculation.
+
+	A complete procedure, must show every instruction that is desired for the computer to execute.
+
+A more complete name, for the objects that we've been calling procedures is program. The computers transalte a 
+program, and executes the semantically equivalent of that program in a language that the computer understands. Since 
+a computing machines, is mainly a digital system. The language is the labguage of bits.
+
+A computer is a perfect machine for the execution of programs since it has a lot of capabilities:
+
+* Carry out numerical computations
+* Handle numerical values
+* Execute repetitive tasks
+
+An example of a program in a low-level like language (Mr. Dumbo) is:
+
+Use locations A, B, SUM;
+Input A;
+Input B;
+SUM := A + B;
+Output SUM;
+
+
