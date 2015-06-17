@@ -1,0 +1,22 @@
+Integers (no decimals, or fractions)
+	
+	For memory constraint enviroments:
+	byte (8 bits)
+	short (16 bits)
+
+	For normal enviroments:
+	int (32 bits)
+	long (64 bits)
+
+Real numbers (decimals, or fractions)
+
+	When we represent real numbers, we got the problem, that besides being infinite, bits are discrete entities,
+	while reality is continous, so we represent approximations of real numbers.
+
+	decimal (Perfect accuracy, small range of numbers than float. Operations are all as you'd expect. Perfect for 
+			 currencies)
+	float (fewer bits, smaller range of numbers and exponenets)
+	double
+
+Char
+Boolean
