@@ -1,0 +1,95 @@
+0. What is the type of the following definition:
+
+	e0 = [False, True, False, True]
+	[Bool]
+
+1. Choose all possible types of the following definition:
+
+	e1 = [[1,2], [3,4]]
+	[[Integer]]
+
+2. Choose all possible types of the following definition:
+
+	e2 = [[[1, 2, 3]], [[3, 4, 5]]]
+
+	[[[Integer]]]
+	[[[Int]]]
+	Num a => [[[a]]]
+
+3. What is the type of the following definition:
+
+	e3 x = x * 2
+
+	Num a => a -> a
+
+4. What is the type of the following definition:
+
+	e4 (x, y) = x
+
+	(a, b) -> a
+
+5. What is the type of the following definition:
+
+	e5 (x, y, z) = z
+
+	(a, b, c) -> c
+
+6. What is the type of the following definition:
+
+	e6 x y = x * y
+
+	Num a => a -> a -> a
+
+7. What is the type of the following definition:
+
+	e7 (x, y) = (y, x)
+
+	(a, b) -> (b, a)
+
+8. What is the type of the following definition:
+
+	e8 x y = (y, x)
+
+	a -> b -> (b, a)
+
+9. What is the type of the following definition:
+
+	e9 [x, y] = (x, True)
+
+	[t] -> (t, Bool)
+
+10. What is the type of the following definition:
+
+	e10 (x, y) = [x, y]
+
+	(a, a) -> [a]
+
+11. Choose a suitable definition for the following type:
+
+	e11 :: (Char, Bool)
+
+	('a', True)
+
+12. Choose a suitable definition for the following type:
+
+	e12 :: [(Char, Int)]
+
+	[('a', 4), ('b', 6)]
+
+13. Choose a suitable definition for the following type:
+
+	e13 :: Int -> Int -> Int
+
+	e13 a b = a + b
+
+14. Choose a suitable definition for the following type:
+
+	e14 :: ([Char], [Float])
+
+	(['a', 'b'], [8.9, 4.0])
+
+15. Choose a suitable definition for the following type:
+
+	e15 :: [a] -> [b] -> (a, b)
+
+	e15 xs ys = (head xs, head ys)

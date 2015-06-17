@@ -1,0 +1,45 @@
+Functional Programming
+
+The software crisis:
+
+We need to reduce the time of development, we need to deliver efficient, and correct programs, so
+we can add features to the languages so we can deliver correct software in short time. All those
+additions, are based on the lambda calculus, the mathematical basis of functionl programming. There
+are several functional languages, such as Clojure, Scheme, Haskell, and they provide abstractions to write code.
+
+A functional programming language, in the purist way is a language that allow us to talk to the computer (the programming process) using definitions and applications of mathematical functions.
+A more practical definition, is the FP is a style of programming that emphasize, supports, and encourages the use of expressions over the use of statements. What an functional programmer do is to compose expressions to create compex expressions, on the other hand, an imperative programmer (one that programs uding imperative languags, such as C, Pascal, Java) creates statements that change the global state of the program, and the statements communicate over the chabge of state of some global variable. Most modern languages support this style by implementing lambda expressions (Java8, C++11, Scala, Erlang)
+
+The following program, an imperative program performs the computation of multiple statements, one after the other by updating the mutable state (the state of the total, and i variables)
+
+var
+	total, i : integer;
+begin
+	total := 0;
+	for i := 1 to 10 do
+		total := total + i
+end.
+
+In Haskell, the same computation can be done by computing the expression sum [1 .. 10], that is the combination of two expressions, [1 .. 10] is the list [1,2,3,4,5,6,7,8,9,10], and sum is a function that sums the values of a list.
+
+Historical background:
+
+1930: Alonzo Church, a mathematician at Princeton develops the lambda calculus, a simple but yet powerful theory of functions. So the theory of FP was developed even before the physical realization of digital computers, and the most primitive programming languages. It was found as a way to find the foundations of mathematics (mathematical logic).
+
+1950: John McCarthy, a mathematician and computer scientist, the pioneer of artificial intelligence (in fact he coined the term), develops Lisp, the first FP language, with some influences from the lambda calculus, yet it retained variable assignments (let a 6).
+
+1960: Peter Landin developed ISWIM (if you see what i mean), was the first FP languages based on the lambda calculus, it was the first pure FP language out there.
+
+1970: John Backus, the creator of FORTRAN (Formula Translator) develops FP, a functional language that emphasizes the use of higher.order functions, and program calculation and correctness.
+
+1970: Robin Milner develops ML, the first modern functional language, which introduced type inference and polymorphic types (generic types). It was designed for automated theorem proofs.
+
+1980: David Turner develops a number of lazy languages (KRC, SASL, and Miranda), culminating in Miranda, the language that influenced most the deelopment of the Haskell programming language.
+
+1987: A goup of programming language researchers started the development of an standard language for experimentation called Haskell, a new standard lazy functional programming language. The Haskell98 report was written in 2003 with the goal to define a standard version of the language
+
+f [] = []
+f(x:xs) = f ys ++ [x] ++ f zs
+	      where
+	      	ys = [a | a <- xs, a <= x]
+	      	zs = [b | b <- xs, b > x]
