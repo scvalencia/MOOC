@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="THViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5rU-JY-OSg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kmq-t7-ewl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CB00001" translatesAutoresizingMaskIntoConstraints="NO" id="yXk-xT-aNG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is decidedly so" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="248" translatesAutoresizingMaskIntoConstraints="NO" id="bRH-sq-tGX">
+                                <rect key="frame" x="36" y="176" width="248" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="MHS-8I-Wxh"/>
+                                    <constraint firstAttribute="width" constant="248" id="gwK-GY-oEM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yXk-xT-aNG" firstAttribute="centerY" secondItem="bRH-sq-tGX" secondAttribute="centerY" constant="38" id="AEB-ep-rzz"/>
+                            <constraint firstItem="yXk-xT-aNG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="MD4-aS-CsQ"/>
+                            <constraint firstItem="yXk-xT-aNG" firstAttribute="centerX" secondItem="bRH-sq-tGX" secondAttribute="centerX" id="Spl-SH-g4g"/>
+                            <constraint firstItem="Kmq-t7-ewl" firstAttribute="top" secondItem="yXk-xT-aNG" secondAttribute="bottom" id="coo-VQ-IFa"/>
+                            <constraint firstAttribute="trailing" secondItem="yXk-xT-aNG" secondAttribute="trailing" id="eIP-d5-TKL"/>
+                            <constraint firstItem="yXk-xT-aNG" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="w3N-eg-css"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="yXk-xT-aNG" id="9g5-ls-Zrq"/>
+                        <outlet property="predictionLabel" destination="bRH-sq-tGX" id="R7S-Ze-OvS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CB00001" width="320" height="568"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
