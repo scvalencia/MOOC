@@ -5,7 +5,7 @@
 **Purpose**: To teach computer programming to people with no experience with programming
 
 #### Programming languages
-**FORTRAN (1950s)**: A formula translator programming language to make programming easier, especially for solve numerical problems.
+**FORTRAN (1950s)**: A formula translator programming language to make programming easier, especially to solve numerical problems.
 
 **Pascal (1960s)**: A programming language for teaching structured programming, it was released as an educational language, and was largely used at schools at the time.
 
@@ -33,8 +33,5 @@ MATLAB was created by an expert FORTRAN scientific programmer, Cleve Moler a pro
 *Nevertheless, this book is not merely a reference manual for MATLAB or a MATLAB tutorial. It is an introductory programming textbook that happens to use MATLAB to illustrate general concepts in computer science and programming. As a side effect, the reader will gain a solid foundation in MATLAB. This book is a good fit for an introductory college-level course in computer programming for engineering and science students. In fact, it is being used as the textbook for such a course at Vanderbilt University. It serves the dual purpose of teaching computer programming and providing a background in MATLAB, which is used in higher-level courses in many majors. This book is also suitable to teach programming to high school students. The material assumes no background in mathematics that is not part of standard high school curricula, and MATLAB is much more accessible as an introduction to programming to the average student than Java, C, C++, or other general-purpose languages.*
 
 #### Introduction to MATLAB programming
-
-###### The MATLAB enviroment
-
 
 
