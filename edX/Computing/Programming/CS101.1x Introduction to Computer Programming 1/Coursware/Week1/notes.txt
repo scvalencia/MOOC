@@ -59,4 +59,25 @@ Input B;
 SUM := A + B;
 Output SUM;
 
+COMPUTER ARCHITECTURE
+
+From a very basic model of computer, we're going to explore a more complicated model or architecture of a computer,
+that involves the basic components that use the computation process, and the representation of data inside a computer.
+
+Main memory <---> BUS <---> Registers, ALU, Controllers <---> Devices
+							---------------------------
+										CPU
+
+Since the computation happens in the CPU, registers, the ALU and the controllers, are the main parts of the programming
+process, since programming for those devices is hard, programming languages abstracts those devices and allow the programmer
+to program using variables, statements, and operations. In this model, the memory and the registers holds data, the controller
+accounts the order of computations, and the ALU performs some arithmetic and logic operations.
+
+Registers == Variables
+Controller == Statements
+ALU == Opertions on data
+
+Buses and devices, works as communication and storage devices, that happends behind the scenes
+
+
 
