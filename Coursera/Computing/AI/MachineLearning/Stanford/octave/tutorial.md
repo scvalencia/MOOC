@@ -98,7 +98,9 @@ ans =
    10.8879    8.1821    4.9628    3.1724   11.8588
 > w = 6 + sqrt(10)*(randn(1,100000));
 > hist(w, 50)
-![](https://raw.githubusercontent.com/scvalencia/MOOC/master/Coursera/Computing/AI/MachineLearning/Stanford/octave/img/normal_histogram.png)
+
 ```
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/Coursera/Computing/AI/MachineLearning/Stanford/octave/img/normal_histogram.png)
 
 
