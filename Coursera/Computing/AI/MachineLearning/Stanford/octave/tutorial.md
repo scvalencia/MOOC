@@ -36,12 +36,48 @@ b = 'hi'
 > disp(sprintf('2 decimals: %0.2f', a)) % As in C format print IO
 2 decimals: 3.14
 > format long % More decimal places to print
-> A = [1 2; 3 4; 5 6] % A 2 x 3 matrix
+> A = [1 2; 3 4; 5 6] % A 3 x 2 matrix
 A =
 	1	2
 	3	4
 	5	6
-> A = [1 2;]
+> A = [1 2;
+> 3 4;
+> 5 6]
+A =
+	1	2
+	3	4
+	5	6
+> v = [1 2 3]
+v =
+	1 2 3
+> v = [1; 2; 3]
+v = 
+	1
+	2
+	3
+> v = 1:0.1:2; % From 1 to 2 step is 0.1, 1 x 11 matrix
+> v = 1:6
+v = 
+	1	2	3	4	5	6
+> ones(2, 3)
+ans =
+	1	1	1
+	1	1	1
+> 2 * ones(2, 3)
+ans = 
+	2	2	2
+	2	2	2
+> w = ones(1, 3)
+ans =
+	1	1	1
+> w = zeros(1, 3)
+ans =
+	0	0	0
+> w = rand(1, 3)
+w =
+	0.23423		0.74654		0.45353
+> w = rand(3, 3) % A 3 x 3 matrix of random numbers
 ```
 
 
