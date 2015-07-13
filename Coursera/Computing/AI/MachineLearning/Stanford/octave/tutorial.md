@@ -2,7 +2,7 @@
 
 ### Basic operations.
 
-```octave
+```matlab
 > 5 + 6
 ans = 11
 > 3 - 2
