@@ -109,4 +109,6 @@ ans =
 
 ![](https://raw.githubusercontent.com/scvalencia/MOOC/master/Coursera/Computing/AI/MachineLearning/Stanford/octave/img/normal_histogram.png)
 
+### Data processing.
+
 
