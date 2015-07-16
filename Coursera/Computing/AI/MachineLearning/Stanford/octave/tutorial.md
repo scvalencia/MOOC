@@ -111,4 +111,132 @@ ans =
 
 ### Data processing.
 
+```matlab
+> A = [1 2; 3 4; 5 6]
+A =
+
+   1   2
+   3   4
+   5   6
+> size(A)
+ans =
+	3	2
+> size(A, 1)
+ans = 
+	3
+> size(A, 2)
+ans =
+	2
+> v = [1 2 3 4]
+v =
+	1	2	3	4
+> size(v)
+ans =
+	1	4
+> length(v)
+ans =
+	4
+> pwd; % Print working directory
+> cd 'path'
+> ls; % List files in wd
+```
+
+file.dat
+
+```
+25	23
+26	12
+12	93
+..	..
+34	90
+```
+
+```matlab
+> load file.dat
+> load('file.dat')
+> who; % Variables in curren enviroment
+> file
+25	23
+26	12
+12	93
+..	..
+34	90
+> size(file)
+ans =
+	x	2
+> whos; % who with detail (name, size, bytes, class)
+> clear file % removes file from the enviroment
+> v = file(1:10)
+> save hello.mat v;
+> load hello.mat % loads the variable v
+> save hello.txt v -ascii % save as text (ASCII)
+> A = [1 2; 3 4; 5 6];
+> A(3, 2) % Third row second column
+ans = 6
+> A(2,:) % Second row
+ans =
+	3	4
+> A(:,2) % Second column
+ans =
+	2
+	4
+	6
+> A([1 3], :)
+ans =
+	1	2
+	5	6
+> A(:,2)
+ans = 
+	2
+	4
+	6
+> A(:, 2) = [10; 11; 12]
+A =
+	1	10
+	3	11
+	5	12
+> A = [A, [100; 101; 102]]
+> A
+A =
+	1	10	100
+	3	11	101
+	5	12	102
+> size(A)
+ans =
+	3	3
+> A(:) % Pus all elmemens of A into a single vector
+ans =
+	1
+	3
+	5
+	10
+	11
+	12
+	100
+	101
+	102
+> A = [1 2; 3 4; 5 6]
+A =
+	1	2
+	3	4
+	5	6
+> B = [11 12; 13 14; 15 16]
+B =
+	11	12
+	13	14
+	15	16
+> C = [A B] % [A, B]
+C =
+	1	2	11	12
+	3	4	14	14
+	5	6	15	16
+> C = [A; B]
+C =
+	1	2
+	3	4
+	5	6
+	11	12
+	13	14
+	15	16
+```
 
