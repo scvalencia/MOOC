@@ -7,7 +7,6 @@ import subprocess
 
 from osax import *
 
-
 ACTIVITIES = ['Music', 'Walk', 'Window']
 
 def add_resource(source, file_name = 'data/break.txt'):
