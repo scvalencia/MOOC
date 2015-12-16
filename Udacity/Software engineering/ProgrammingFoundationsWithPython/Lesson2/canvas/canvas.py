@@ -93,7 +93,7 @@ def draw_sierpinski(length,depth):
 	window = turtle.Screen()
 	t = turtle.Turtle()
 
-	if depth==0:
+	if depth == 0:
 		for i in range(0, 3):
 			t.fd(length)
 			t.left(120)
@@ -114,7 +114,7 @@ def draw_sierpinski(length,depth):
 	window.exitonclick()
 
 def main():
-	draw_sierpinski(100, 2)
+	draw_sierpinski(100, 4)
 
 if __name__ == '__main__':
 	main()
