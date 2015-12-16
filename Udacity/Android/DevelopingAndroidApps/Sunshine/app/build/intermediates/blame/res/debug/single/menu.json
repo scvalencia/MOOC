@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/scvalencia606/Documents/MOOC/MOOC/Udacity/Android/2.DevelopingAndroidApps/Sunshine/app/build/intermediates/res/merged/debug/menu/forecast_fragment.xml",
+        "source": "/Users/scvalencia606/Documents/MOOC/MOOC/Udacity/Android/2.DevelopingAndroidApps/Sunshine/app/src/main/res/menu/forecast_fragment.xml"
+    },
+    {
+        "merged": "/Users/scvalencia606/Documents/MOOC/MOOC/Udacity/Android/2.DevelopingAndroidApps/Sunshine/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/scvalencia606/Documents/MOOC/MOOC/Udacity/Android/2.DevelopingAndroidApps/Sunshine/app/src/main/res/menu/menu_main.xml"
+    }
+]

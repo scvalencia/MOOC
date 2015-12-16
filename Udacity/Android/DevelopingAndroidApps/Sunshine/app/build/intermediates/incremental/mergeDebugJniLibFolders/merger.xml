@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/scvalencia606/Documents/MOOC/MOOC/Udacity/Android/2.DevelopingAndroidApps/Sunshine/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/scvalencia606/Documents/MOOC/MOOC/Udacity/Android/2.DevelopingAndroidApps/Sunshine/app/src/debug/jniLibs"/></dataSet></merger>
