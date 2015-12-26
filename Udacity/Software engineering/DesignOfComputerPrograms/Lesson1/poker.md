@@ -26,20 +26,17 @@ poker : [hand] -> hand
 had_rank : hand -> tuple
 	@return a value indicating the ranking of a hand
 ```
-<center>
 
 
 Code | Name | Description | Example | Value 
 ------------ | ------------- | ------------ | ------------ | ------------- 
-0 | `High card` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img0.png" width="300" height="80" /> | (0, 6)
-1 | `Pair` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img1.png" width="300" height="80" /> | (0, 6)
-2 | `Two pair` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img2.png" width="300" height="80" /> | (0, 6)
-3 | `Three of a kind` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img3.png" width="300" height="80" /> | (0, 6)
-4 | `Straight` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img4.png" width="300" height="80" /> | (0, 6)
-5 | `Flush` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img5.png" width="300" height="80" /> | (0, 6)
-6 | `Full house` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img6.png" width="300" height="80" /> | (0, 6)
-7 | `Four of kind` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img7.png" width="300" height="80" /> | (0, 6)
-8 | `Straight flush` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img8.png" width="300" height="80" /> | (0, 6)
-
-</center>
+0 | `High card` | (0, sorted(highest to lowest) hand) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img0.png" width="300" height="80" /> | (0, [7, 5, 4, 3, 2])
+1 | `Pair` | (1, pair_rank, sorted(highest to lowest) hand) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img1.png" width="300" height="80" /> | (1, 2, [11, 6, 3, 2, 2])
+2 | `Two pair` | (2, highest_pair_rank, other_pair_rank, sorted(highest to lowest) hand) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img2.png" width="300" height="80" /> | (2, 11, 3, [13, 11, 11, 3, 3])
+3 | `Three of a kind` | (3, three_card_rank, sorted(highest to lowest) hand) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img3.png" width="300" height="80" /> | (3, 7, [7, 7 ,7 , 5, 3])
+4 | `Straight` | (4, highest_card_rank) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img4.png" width="300" height="80" /> | (4, 11)
+5 | `Flush` | (5, sorted(highest to lowest) hand) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img5.png" width="300" height="80" /> | (5, [10, 8, 7, 5, 3])
+6 | `Full house` | (6, three_card_rank, others_card_rank) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img6.png" width="300" height="80" /> | (6, 8, 13)
+7 | `Four of kind` | (7, four_cards_rank, other_card_rank) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img7.png" width="300" height="80" /> | (7, 14, 12)
+8 | `Straight flush` | (8, high_card_rank ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img8.png" width="300" height="80" /> | (8, 11)
 
