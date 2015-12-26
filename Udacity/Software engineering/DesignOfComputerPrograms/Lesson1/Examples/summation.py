@@ -16,5 +16,7 @@ def main():
 	print functional_summation(3)
 	print norvig_summation(3)
 
+	print max([1, 4, 5, 0, -7]), max([1, 4, 5, 0, -7], key=abs)
+
 if __name__ == '__main__':
 	main()
