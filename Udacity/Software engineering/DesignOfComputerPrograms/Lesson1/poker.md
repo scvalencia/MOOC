@@ -30,4 +30,6 @@ had_rank : hand -> tuple
 Code | Name | Description | Example | Value 
 ------------ | ------------- | ------------ | ------------ | ------------- 
 0 | `High card` | (0, ) | ![alt tag](https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img8.png =300x80) | (0, 6)
+0 | `High card` | (0, ) | ![alt tag](https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img8.png =300x80) | (0, 6)
+0 | `High card` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img8.png" width="300" height="80" /> | (0, 6)
 
