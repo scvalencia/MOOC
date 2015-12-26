@@ -26,6 +26,8 @@ poker : [hand] -> hand
 had_rank : hand -> tuple
 	@return a value indicating the ranking of a hand
 ```
+<center>
+
 
 Code | Name | Description | Example | Value 
 ------------ | ------------- | ------------ | ------------ | ------------- 
@@ -38,4 +40,6 @@ Code | Name | Description | Example | Value
 6 | `Full house` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img6.png" width="300" height="80" /> | (0, 6)
 7 | `Four of kind` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img7.png" width="300" height="80" /> | (0, 6)
 8 | `Straight flush` | (0, ) | <img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img8.png" width="300" height="80" /> | (0, 6)
+
+</center>
 
