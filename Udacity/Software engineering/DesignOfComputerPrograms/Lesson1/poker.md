@@ -27,11 +27,7 @@ had_rank : hand -> tuple
 	@return a value indicating the ranking of a hand
 ```
 
-Mathematics | Haskell 
------------- | -------------
-`:load` | Load script name
-`:reload`| Reload current script
-`:edit` | Edit script (current od given)
-`:type`| Show type of expression
-`:?` | Show all commands
-`:quit` | quit REPL
+Code | Name | Description | Example | Value 
+------------ | ------------- | ------------ | ------------ | ------------- 
+0 | `High card` | (0, ) | ![alt tag](https://raw.githubusercontent.com/scvalencia/MOOC/master/Udacity/Software%20engineering/DesignOfComputerPrograms/img/img8.png) | (0, 6)
+
