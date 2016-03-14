@@ -1,0 +1,1 @@
+alert(JSON.stringify({'name' : 'Ulises', 'lastname' : 'Paz', 'age' : 7}));
