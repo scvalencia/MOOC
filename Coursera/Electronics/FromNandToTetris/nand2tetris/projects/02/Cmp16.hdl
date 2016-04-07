@@ -1,0 +1,24 @@
+/*
+ * Tells if the input is zero
+ */
+
+CHIP Cmp16 {
+    IN a[16];
+    OUT out;
+
+    PARTS:
+    Not(in=a[0], out=na0); Not(in=a[1], out=na1); Not(in=a[2], out=na2); Not(in=a[3], out=na3); 
+    Not(in=a[4], out=na4); Not(in=a[5], out=na5); Not(in=a[6], out=na6); Not(in=a[7], out=na7); 
+    Not(in=a[8], out=na8); Not(in=a[9], out=na9); Not(in=a[10], out=na10); Not(in=a[11], out=na11); 
+    Not(in=a[12], out=na12); Not(in=a[13], out=na13); Not(in=a[14], out=na14); Not(in=a[15], out=na15); 
+
+    And(a=na0, b=na1, out=aux1); 
+
+    And(a=aux1, b=na2, out=aux2); And(a=aux2, b=na3, out=aux3);
+    And(a=aux3, b=na4, out=aux4); And(a=aux4, b=na5, out=aux5);
+    And(a=aux5, b=na6, out=aux6); And(a=aux6, b=na7, out=aux7);
+    And(a=aux7, b=na8, out=aux8); And(a=aux8, b=na9, out=aux9);
+    And(a=aux9, b=na10, out=aux10); And(a=aux10, b=na11, out=aux11);
+    And(a=aux11, b=na12, out=aux12); And(a=aux12, b=na13, out=aux13);
+    And(a=aux13, b=na14, out=aux14); And(a=aux14, b=na15, out=out);
+}

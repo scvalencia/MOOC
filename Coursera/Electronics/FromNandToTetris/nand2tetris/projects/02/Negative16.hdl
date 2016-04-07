@@ -1,0 +1,11 @@
+/*
+ * Tells if the input is negative
+ */
+
+CHIP Negative16 {
+    IN a[16];
+    OUT out;
+
+    PARTS:
+    And(a=true, b=true, out=a0);    
+}
