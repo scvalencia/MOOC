@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="progfun1-example"
+		module="progfun1-example$sbt_2.11"
+		revision="0.1-SNAPSHOT"
+		status="integration"
+		publication="20160527113858"
+	/>
+	<configurations>
+		<conf name="default" visibility="public"/>
+	</configurations>
+	<publications>
+	</publications>
+	<dependencies>
+		<dependency org="org.scala-sbt" name="sbt" rev="0.13.9" conf="default->default(compile)"/>
+		<dependency org="org.scalastyle" name="scalastyle_2.10" rev="0.8.0" conf="default->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.5" conf="default->default(compile)" info.apiURL="http://www.scala-lang.org/api/2.10.5/"/>
+		<dependency org="org.scalariform" name="scalariform_2.10" rev="0.1.7" conf="default->default(compile)"/>
+		<dependency org="com.typesafe" name="config" rev="1.2.0" conf="default->default(compile)"/>
+		<dependency org="org.scalaj" name="scalaj-http_2.10" rev="2.2.1" conf="default->default(compile)"/>
+		<dependency org="commons-codec" name="commons-codec" rev="1.10" conf="default->default(compile)"/>
+		<dependency org="org.apache.commons" name="commons-lang3" rev="3.4" conf="default->default(compile)"/>
+		<dependency org="com.typesafe.sbteclipse" name="sbteclipse-plugin" rev="4.0.0" conf="default->default(compile)" scalaVersion="2.10" sbtVersion="0.13"/>
+		<dependency org="org.scalaz" name="scalaz-core_2.10" rev="7.1.0" conf="default->default(compile)"/>
+		<dependency org="org.scalaz" name="scalaz-effect_2.10" rev="7.1.0" conf="default->default(compile)"/>
+	</dependencies>
+</ivy-module>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ciclos</title>
+    <script type="text/javascript">
+
+    var divbox, button, field;
+
+    function init() {
+        divbox = document.getElementById("box");
+        divbox.innerHTML += "<br>Números <strong>Pares</strong><br><br>";
+
+        var i = 10;
+        while(i > 0) {
+        	if(i % 2 == 0) {
+        		divbox.innerHTML += "<br>" + i;
+        	}
+        	i--;
+        }
+
+        button = document.getElementById("button");
+        button.addEventListener("click", factorialHandler);
+    }
+
+    function factorialHandler() {
+    	field = document.getElementById("textbox");
+ 		var number = Number(field.value);
+    	var i = 1, factorial = 1;
+
+    	while(i++ < number) {
+    		factorial *= i;
+    	}
+
+    	divbox.innerHTML += "<br><font size=\"10\">" + factorial + "</font>";
+    }
+    </script>
+</head>
+
+<body>
+	<input type="text" id="textbox">
+	<input type="button" id="button" value="Press">
+	<br>
+	<br>
+    <div id="box">Hello World</div>
+    <script type="text/javascript">
+    init();
+    </script>
+</body>
+
+</html>
