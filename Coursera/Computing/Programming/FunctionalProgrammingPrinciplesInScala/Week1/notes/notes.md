@@ -238,7 +238,7 @@ eval(EXP, cbv)									eval(EXP, cbn)
 	LOOP											1
 ```
 
-Scala uses normally call-by-value, sinc in practice, cbv, avoids recomputation of expressions, leading to an exponential factor incresing its performance, and plays much nicer with side effects and imperative programming. Scala let's one force cbn, using ```paramater: => Type``.
+Scala uses normally call-by-value, sinc in practice, cbv, avoids recomputation of expressions, leading to an exponential factor incresing its performance, and plays much nicer with side effects and imperative programming. Scala let's one force cbn, using ```paramater: => Type```.
 
 Example
 
@@ -270,7 +270,7 @@ To express choosing betweene two alternatives, Scala has the conditional express
 def abs(x: Int): Int = if (x >= 0) x else -x
 ```
 
-```x >= 0`` is a predicate, of type Boolean. Boolean expressions can be composed of
+```x >= 0``` is a predicate, of type Boolean. Boolean expressions can be composed of
 
 ```scala
 true false		// Constants
@@ -306,7 +306,7 @@ eval(b) = false THEN
 
 ### Value definitions
 
-We've seen the function parameters, can be passed by value, or be passed by name. The same applies to definitions. The ```def```form, is **by-name** (its right hand side is evaluated on each use). The ```val```form, id **by-value**.
+We've seen the function parameters, can be passed by value, or be passed by name. The same applies to definitions. The ```def``` form, is **by-name** (its right hand side is evaluated on each use). The ```val``` form, id **by-value**.
 
 Example:
 
@@ -315,7 +315,66 @@ val x = 2
 val y = square(x)
 ```
 
-The right-hand side of a ```val``` definition, is evaluated at the point of the definition itself. Afterwards, the name refers to the value. For instance, ```y```above refers to 4, not ```square(2)```
+The right-hand side of a ```val``` definition, is evaluated at the point of the definition itself. Afterwards, the name refers to the value. For instance, ```y``` above refers to 4, not ```square(2)```.
+
+Example:
+
+```scala
+def and(x: Boolean, y: => Boolean) = if (x) y else false
+def or(x: Boolean, y: Boolean) = if (x) true else y
+```
+
+## An example of a program: Newton's method
+
+To calculate square roots with Newton's method. We will define a function with the following signature:
+
+```scala
+/** Calculate the square root of parameter x */
+def sqrt(x: Duble): Double = ...
+```
+
+The classical way to achieve that, is by successive approximations using Newton's method.
+
+Example: ```x = 2 ```
+
+* Start with an initial positive number as guess (let's pick ```y=1```)
+* Repeatedly improve the estimate by taking the mean of ```y``` and ```x/y```
+
+| Estimation    | Quotient      | Mean  |
+| ------------  |---------------| ------|
+| 1				| 2 / 1 = 2     | 1.5 |
+| 1.5      		| 2 / 1.5 = 1.333      |   1.4167 |
+| 1.4167 		| 2 / 1.4167 = 1.4118      |    1.4142 |
+| 1.4142 		| ...      |    ...|
+
+```scala
+
+val EPSILON = 0.000001
+
+def abs(x: Double) = if (x < 0) -x else x
+
+// Recursive definitons need an explicit return type in Scala
+def newton(guess: Double, x: Double): Double =
+	if (isGoodEnough(guess, x)) guess
+	else newton(improve(guess, x), x)
+
+def isGoodEnough(guess: Double, x: Double) =
+	abs(guess * guess - x) < EPSILON 
+
+def improve(guess: Double, x: Double) = 
+	(guess + x / guess) / 2
+
+def sqrt(x: Double) = newton(1.0, x)
+
+println(sqrt(2))
+println(sqrt(9))
+println(sqrt(25))
+
+```
+
+## Blocks and lexical scoping
+
+
 
 
 
