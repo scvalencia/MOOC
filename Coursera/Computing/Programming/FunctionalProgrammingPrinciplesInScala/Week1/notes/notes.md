@@ -238,7 +238,7 @@ eval(EXP, cbv)									eval(EXP, cbn)
 	LOOP											1
 ```
 
-Scala uses normally call-by-value, sinc in practice, cbv, avoids recomputation of expressions, leading to an exponential factor incresing its performance, and plays much nicer with side effects and imperative programming. Scala let's one force cbn, using paramater: => Type.
+Scala uses normally call-by-value, sinc in practice, cbv, avoids recomputation of expressions, leading to an exponential factor incresing its performance, and plays much nicer with side effects and imperative programming. Scala let's one force cbn, using ```paramater: => Type``.
 
 Example
 
@@ -270,7 +270,7 @@ To express choosing betweene two alternatives, Scala has the conditional express
 def abs(x: Int): Int = if (x >= 0) x else -x
 ```
 
-x >= 0 is a predicate, of type Boolean. Boolean expressions can be composed of
+```x >= 0`` is a predicate, of type Boolean. Boolean expressions can be composed of
 
 ```scala
 true false		// Constants
@@ -315,7 +315,7 @@ val x = 2
 val y = square(x)
 ```
 
-The right-hand side of a ```val``` definition, is evaluated at the point of the definition itself. Afterwards, the name refers to the value. For instance, ```y```above refers to 4, not ```scala square(2)```
+The right-hand side of a ```val``` definition, is evaluated at the point of the definition itself. Afterwards, the name refers to the value. For instance, ```y```above refers to 4, not ```square(2)```
 
 
 
