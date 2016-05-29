@@ -26,7 +26,7 @@ A **theory**, consists of one or more data types, operations on these types, and
 
 But it does not define an operator to change the coefficient while keeping the polynomial the same. But one could write an imperative program such as:
 
-```
+```c
 struct Polynomial {
 	char* coefficients;
 };
