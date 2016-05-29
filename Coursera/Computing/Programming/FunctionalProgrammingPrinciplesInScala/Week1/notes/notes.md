@@ -20,7 +20,7 @@ Orthogonal to them, is object-oriented programming
 
 A **theory**, consists of one or more data types, operations on these types, and laws to describe the relationships between values and operations (a theory, does not describes mutations, that is, to change an object keeping its identity the same). For instance, the theory of polynomials, defines the sum of two polynomials by laws such as:
 
-```
+```scala
 (a*x + b) + (c*x + d) = (a + c)*x + (b + d)
 ```
 
@@ -110,7 +110,7 @@ eval(EXP)
 
 Definitions can also have parameters
 
-```
+```scala
 scala> def square(x: Double) = x * x
 square: (Double)Double
 
@@ -119,7 +119,9 @@ sumOfSquares: (Double,Double)Double
 
 // Optinal type
 scala> def power(x: Double, y: Int): Double = ...
+```
 
+```
 Int			32-bit integers
 Double		64-bit floating point numbers
 Boolean		true, false
@@ -150,7 +152,7 @@ eval(EXP)
 
 This scheme is called the substitution model. The general idea, is that evaluation does reduce an expression to a value (simple rewriting steps until there's a final value). It can be applied to every expression, as long as they have no side effects. It is formalized in the lambda calculus, which also gives a foundation for functional programming, and is equivalent to Turing machines. Not every expression reduce to a value. For instance:
 
-```
+```scala
 def loop: Int = loop
 ```
 
@@ -177,7 +179,7 @@ The first evaluation strategy, is called **call-by-value**, the second one, is k
 
 Example:
 
-```
+```scala
 def test(x: int, y: Int): Int = x * x
 ```
 
@@ -259,8 +261,7 @@ eval(EXP)
 	
 ```
 
-
-
+## Conditionals and value definitions
 
 
 
