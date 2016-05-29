@@ -60,7 +60,7 @@ Functional programming offers simpler reasoning principles. better modularity, a
 
 Every non-trivial language, has primitive expressions that represents the simplest elements in the language (atoms), ways to combine expressions, and ways to abstract expressions, which introduce a name for an expression by which it can then be referred to. A **REPL**, provides an interactive shell in which one can type expressions, ang get the rcomputation of those expressions.
 
-```
+```scala
 scala
 Welcome to Scala version 2.11.7 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_45).
 Type in expressions to have them evaluated.
@@ -91,7 +91,7 @@ A name is evaluated by replacing it with the right hand side of its definition (
 
 Example:
 
-```
+```scala
 EXP: (2 * pi) * radius
 eval(EXP)
 	LEFTMOST = (2 * pi)
@@ -121,7 +121,7 @@ sumOfSquares: (Double,Double)Double
 scala> def power(x: Double, y: Int): Double = ...
 ```
 
-```
+```scala
 Int			32-bit integers
 Double		64-bit floating point numbers
 Boolean		true, false
@@ -135,7 +135,7 @@ Applications of parametrized functions are evaluated in a similar way as operato
 
 Example:
 
-```
+```scala
 EXP: sumOfSquares(3, 2 + 2)
 eval(EXP)
 	sumOfSquare(3, 2 + 2)
@@ -158,7 +158,7 @@ def loop: Int = loop
 
 One could alternatively, apply the function to unreduced arguments while evaluating a function application.
 
-```
+```scala
 EXP: sumOfSquares(3, 2 + 2)
 eval(EXP)
 	sumOfSquare(3, 2 + 2)
@@ -229,7 +229,7 @@ Here we explore the means of evaluation and termination.
 
 Example:
 
-```
+```scala
 def fisrt(x: Int, y: Int) = x
 
 EXP: fisrt(1, loop)
@@ -238,11 +238,11 @@ eval(EXP, cbv)									eval(EXP, cbn)
 	LOOP											1
 ```
 
-Scala uses normally call-by-value, sinc in practice, cbv, avoids recomputation of expressions, leading to an exponential factor incresing its performance, and plays much nicer with side effects and imperative programming. Scala let's one force cvn, using paramater: => Type.
+Scala uses normally call-by-value, sinc in practice, cbv, avoids recomputation of expressions, leading to an exponential factor incresing its performance, and plays much nicer with side effects and imperative programming. Scala let's one force cbn, using paramater: => Type.
 
 Example
 
-```
+```scala
 def one(x: Int, y: => Int) = 1
 
 EXP: one(1 + 2, loop)
