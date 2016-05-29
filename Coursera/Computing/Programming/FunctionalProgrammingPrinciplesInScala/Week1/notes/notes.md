@@ -257,12 +257,65 @@ eval(EXP)
 	one(loop, 1 + 2)
 	one(loop, 1 + 2)
 	one(loop, 1 + 2)
-	...
-	
+	...	
 ```
 
 ## Conditionals and value definitions
 
+### Conditional expressions
+
+To express choosing betweene two alternatives, Scala has the conditional expression ```if-else```. It is used for expressions, not statements.
+
+```scala
+def abs(x: Int): Int = if (x >= 0) x else -x
+```
+
+x >= 0 is a predicate, of type Boolean. Boolean expressions can be composed of
+
+```scala
+true false		// Constants
+!b				// Negation
+b && b			// Conjunction
+b || b			// Disjunction
+
+// Usual comparison operations:
+
+e <= e, e >= e. e < e, e > e, e == e, e != e
+```
+The rewrite rules fro Boolean expressions are (semantics is defined using the substitution model):
+
+```
+!true			->		false
+!false			->		true
+true && e		->		e
+false && e		->		false		// Short-circuit evaluation
+true || e		->		true		// Short-circuit evaluation
+false || e 		->		e
+```
+
+Example:
+
+```
+if (b) e1 else e2
+
+eval(b) = true THEN
+	e1
+eval(b) = false THEN
+	e2
+```
+
+### Value definitions
+
+We've seen the function parameters, can be passed by value, or be passed by name. The same applies to definitions. The ```def```form, is **by-name** (its right hand side is evaluated on each use). The ```val```form, id **by-value**.
+
+Example:
+
+```scala
+val x = 2
+val y = square(x)
+```
+
+The right-hand side of a ```val``` definition, is evaluated at the point of the definition itself. Afterwards, the name refers to the value. For instance, ```y```above refers to 4, not ```scala square(2)```
 
 
 
