@@ -405,8 +405,11 @@ val result = {
 
 The result value of the program, is 16.
 
+In Scala, semicolons at the end of the line are in most cases optional. If there are more than one statement on a line they need to be separated by semicolons.
 
+```scala
+val y = x + 1; y * y
+```
 
-
-
+## Tail recursion
 
