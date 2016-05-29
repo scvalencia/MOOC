@@ -413,3 +413,4 @@ val y = x + 1; y * y
 
 ## Tail recursion
 
+$$\sum_{i=0}^n i = \frac{n(n - 1)}{2}$$
