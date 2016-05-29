@@ -374,6 +374,38 @@ println(sqrt(25))
 
 ## Blocks and lexical scoping
 
+To develop a mechanism based on blocks and lexical scoping to organize programs. It's good for functional programming style to split up a task into many small functions. For example, the functions ```abs, newton, isGoodEnough, improve```, matter only for the implementation of ```sqrt```, not for its usage. Normally, we would not like users to access these functions directly. We can achieve the same functionality by putting those auxiliary functions inside ```sqrt```.
+
+Blocks affects the visibility of variables in a program.
+
+Example:
+
+```scala
+val x = 0
+def f(y: Int) = y + 1
+val result = {
+	val x = f(3)
+	x * x
+}
+```
+
+* The definitions inside a block are only visible from within the block
+* The definitions inside a block shadow definitions of the same names outside the block
+
+Example:
+
+```scala
+val x = 0
+def f(y: Int) = y + 1
+val result = {
+	val x = f(3)
+	x * x
+} + x
+```
+
+The result value of the program, is 16.
+
+
 
 
 
