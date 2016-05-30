@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>notes</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Functions and evaluations</h1>
+
+<h2 id="toc_1">Objectives</h2>
+
+<ul>
+<li>To learn about the basic principles of functional programming</li>
+<li>To learn how to construct functional programs</li>
+<li>To be able to reason about functional programs</li>
+</ul>
+
+<h2 id="toc_2">Programming paradigms</h2>
+
+<p><strong>Paradigm</strong>, in science, this refers distinct concepts of thought patterns in some scientific discipline. Main programming paradigms are:</p>
+
+<ul>
+<li>Imperative programming</li>
+<li>Functional programming</li>
+<li>Logic programming</li>
+</ul>
+
+<p>Orthogonal to them, is object-oriented programming</p>
+
+<p><strong>Imperative programming</strong>, is about the modification of mutable variables using assignments and control structures such as selection, loops, and interruptions. The most common informal way to understand it is using the instructions sequences for a Von-neumann computer (CPU + RAM + IO bus). That model, mantains a strong correspondence between its structures and computer hardware concepts (mutable variables with memory cells, variable dereferences with load instructions, variable assignments with store instructions, and control instructions with jumps). There&#39;s a problem with that, the conceptualization of programs written in that style, is attached with the meaning of the program word by word (John Backus, <em>Can programming be liberated from the von Neumann style?: a functional style and its algebra of programs</em>). In the end, imperative programming is limited by the &quot;Von Neumann&quot; bottleneck. We need other techniques for defining high-level abstractions such as collections, polynomials, string, documents. And ideally, to develop a <strong>theory</strong> of those objects to enable higher-order reasoning.</p>
+
+<p>A <strong>theory</strong>, consists of one or more data types, operations on these types, and laws to describe the relationships between values and operations (a theory, does not describes mutations, that is, to change an object keeping its identity the same). For instance, the theory of polynomials, defines the sum of two polynomials by laws such as:</p>
+
+<div><pre><code class="language-scala">(a*x + b) + (c*x + d) = (a + c)*x + (b + d)</code></pre></div>
+
+<p>But it does not define an operator to change the coefficient while keeping the polynomial the same. But one could write an imperative program such as:</p>
+
+<div><pre><code class="language-c">struct Polynomial {
+    char* coefficients;
+};
+
+struct Polynomial p;
+p.coeffiecients = (char*) malloc(sizeof(char) * 50);
+*(p.coefficients + 0) = 42</code></pre></div>
+
+<p>In this piece of code, one coefficient of the polynomial is altered, while the polynomial, remains the same. That&#39;s an inconsistency with the theory. If we want to implement high-level concepts following their mathematical theories, there&#39;s not place for mutation. Since the theories does not admits it, since it can destroy useful laws in the theories. That leads to a new style of programming, where we concentrate on the definition of theories for operators expressed as functions, avoid mutations, and provide powerful means to abstract and compose functions.</p>
+
+<h3 id="toc_3">Functional programming</h3>
+
+<p>In a restricted sense, functional programming means programming without mutable variables, assignments, loops, and other imperative programming control structures. In a wider sense, FP, means focusing on the functions. In particular, functons can be values that are produced, consumed and composed. A functional programming languages, in the restricted sense, does not have mutable variables, assignments of imperative control structures. In a wider sense, a FPL enables the construction of elegant programs that focus on the functions. In particular, functions in a FPL are first-class citizens. This means:</p>
+
+<ul>
+<li>They can be defined anywhere, including inside functions</li>
+<li>The can be passed as parameters to functionas, and be returned as values</li>
+<li>There exists a set of operators to compose functions</li>
+</ul>
+
+<p>Some functional programming languages in the not restricted view:</p>
+
+<ul>
+<li>Lisp, Scheme, Clojure</li>
+<li>SML, OCaml, F#</li>
+<li>Haskell</li>
+<li>Scala</li>
+<li>Smalltalk, Ruby</li>
+</ul>
+
+<p>Functional programming offers simpler reasoning principles. better modularity, and good exploitation of parallelism for multicore and cloud computing.</p>
+
+<h2 id="toc_4">Elements of programming</h2>
+
+<p>Every non-trivial language, has primitive expressions that represents the simplest elements in the language (atoms), ways to combine expressions, and ways to abstract expressions, which introduce a name for an expression by which it can then be referred to. A <strong>REPL</strong>, provides an interactive shell in which one can type expressions, ang get the rcomputation of those expressions.</p>
+
+<div><pre><code class="language-scala">scala
+Welcome to Scala version 2.11.7 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_45).
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala&gt; 4 + 5
+res0: Int = 9
+
+scala&gt; def radius = 10
+radius: Int
+
+scala&gt; def pi = 3.14159
+pi: Double
+
+scala&gt; raidus * pi
+res1: Double = 31.4159</code></pre></div>
+
+<h3 id="toc_5">Evaluation</h3>
+
+<p>Every non-primitive expression, is evaluated as follows:</p>
+
+<ol>
+<li>Take the leftmost operator</li>
+<li>Evaluate its operands (left before right)</li>
+<li>Apply the operator to the operands</li>
+</ol>
+
+<p>A name is evaluated by replacing it with the right hand side of its definition (no mutability accepted). The evaluation halts once it result in a value (an atom).</p>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">EXP: (2 * pi) * radius
+eval(EXP)
+    LEFTMOST = (2 * pi)
+    eval(LEFTMOST)
+        LEFTMOST = 2
+        eval(LEFTMOST) = 2
+        RIGHTMOST = pi
+        eval(RIGHTMOST) = 3.14159
+    = 6.28318
+    RIGHTMOST = radius
+    eval(radius) = 10
+= 62.8318    </code></pre></div>
+
+<h3 id="toc_6">Evaluation of function applications</h3>
+
+<p>Definitions can also have parameters</p>
+
+<div><pre><code class="language-scala">scala&gt; def square(x: Double) = x * x
+square: (Double)Double
+
+scala&gt; def sumOfSquares(x: Double, y: Double) = square(x) + square(y)
+sumOfSquares: (Double,Double)Double
+
+// Optinal type
+scala&gt; def power(x: Double, y: Int): Double = ...</code></pre></div>
+
+<div><pre><code class="language-scala">Int         32-bit integers
+Double      64-bit floating point numbers
+Boolean     true, false</code></pre></div>
+
+<p>Applications of parametrized functions are evaluated in a similar way as operators:</p>
+
+<ol>
+<li>Evaluate all function arguments, from left to right</li>
+<li>Replace the function application by the function&#39;s right-hand side, and at the same time</li>
+<li>Replace the formal parameters of the functions, by the actual parameters</li>
+</ol>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">EXP: sumOfSquares(3, 2 + 2)
+eval(EXP)
+    sumOfSquare(3, 2 + 2)
+    sumOfSquare(eval(3), 2 + 2)
+    sumOfSquare(3, eval(2 + 2)) 
+    sumOfSquare(3, 4)
+    square(3) + square(4)
+    square(eval(3)) + square(eval(4))
+    3 * 3 + square(4)
+    9 + 4 * 4
+    9 + 16
+= 25</code></pre></div>
+
+<p>This scheme is called the substitution model. The general idea, is that evaluation does reduce an expression to a value (simple rewriting steps until there&#39;s a final value). It can be applied to every expression, as long as they have no side effects. It is formalized in the lambda calculus, which also gives a foundation for functional programming, and is equivalent to Turing machines. Not every expression reduce to a value. For instance:</p>
+
+<div><pre><code class="language-scala">def loop: Int = loop</code></pre></div>
+
+<p>One could alternatively, apply the function to unreduced arguments while evaluating a function application.</p>
+
+<div><pre><code class="language-scala">EXP: sumOfSquares(3, 2 + 2)
+eval(EXP)
+    sumOfSquare(3, 2 + 2)
+    square(3) + square(2 + 2)
+    3 * 3 + square(2 + 2)
+    9 + (2 + 2) * (2 +2)
+    9 + 4 * (2 + 2)
+    9 + 4 * 4
+= 25</code></pre></div>
+
+<p>The first evaluation strategy, is called <strong>call-by-value</strong>, the second one, is known as <strong>call-by-name</strong>. Both strategies reduce to the same final values as long as:</p>
+
+<ul>
+<li>The reduced expression consists of pure functions</li>
+<li>Both evaluations terminate</li>
+</ul>
+
+<p><strong>call-by-value</strong>, has the adventage that it evaluates every function argument just once. <strong>call-by-name</strong>, has the adventage that the function argument is not evaluated if the corresponding parameter is unused in the evaluation of the function&#39;s body.</p>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">def test(x: int, y: Int): Int = x * x</code></pre></div>
+
+<p><strong>call-by-value</strong> vs <strong>call-by-name</strong> (eval(atom) does not count)</p>
+
+<div><pre><code class="language-none">EXP: test(2, 3) -&gt; Same complexity 
+
+eval(EXP, cbv)                              eval(EXP, cbn)
+    2 * 2                                       2 * 2
+    4                                           4
+    
+EXP: test(3 + 4, 8)  -&gt; call-by-value wins
+                    
+eval(EXP, cbv)                              eval(EXP, cbn)
+    test(7, 8)                                  (3 + 4) * (3 + 4)
+    7 * 7                                       7 * (3 + 4)
+    49                                          7 * 7
+                                                49
+    
+EXP: test(7, 2 * 4) -&gt; call-by-name wins
+
+eval(EXP, cbv)                              eval(EXP, cbn)
+    test(7, 8)                                  7 * 7
+    7 * 7                                       49
+    49
+    
+EXP: test(3 + 4, 2 * 4) -&gt; Same complexity
+
+eval(EXP, cbv)                              eval(EXP, cbn)
+    test(7, 2 * 4)                              (3 + 4) * (3 + 4)
+    test(7, 8)                                  7 * (3 + 4)
+    7 * 7                                       7 * 7
+    49                                          49
+
+    </code></pre></div>
+
+<h2 id="toc_7">Evaluation models and termination</h2>
+
+<p>Here we explore the means of evaluation and termination. </p>
+
+<p><strong>Theorem</strong> <em>call-by-value</em> and <em>call-by-name</em> evaluation strategies reduce an expression to the same value, as long as both evaluations terminate.</p>
+
+<p><strong>Theorem</strong> If <em>call-by-value</em> evaluation of EXP terminates, then 
+<em>call-by-name</em> evaluation terminates, too.</p>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">def fisrt(x: Int, y: Int) = x
+
+EXP: fisrt(1, loop)
+
+eval(EXP, cbv)                                  eval(EXP, cbn)
+    LOOP                                            1</code></pre></div>
+
+<p>Scala uses normally call-by-value, sinc in practice, cbv, avoids recomputation of expressions, leading to an exponential factor incresing its performance, and plays much nicer with side effects and imperative programming. Scala let&#39;s one force cbn, using <code>paramater: =&gt; Type</code>.</p>
+
+<p>Example</p>
+
+<div><pre><code class="language-scala">def one(x: Int, y: =&gt; Int) = 1
+
+EXP: one(1 + 2, loop)
+
+eval(EXP)
+    one(3, loop)    // Since first argument is cbv
+    1               // Since second argument is cbn
+    
+EXP: one(loop, 1 + 2)
+
+eval(EXP)
+    one(loop, 1 + 2)
+    one(loop, 1 + 2)
+    one(loop, 1 + 2)
+    ... </code></pre></div>
+
+<h2 id="toc_8">Conditionals and value definitions</h2>
+
+<h3 id="toc_9">Conditional expressions</h3>
+
+<p>To express choosing betweene two alternatives, Scala has the conditional expression <code>if-else</code>. It is used for expressions, not statements.</p>
+
+<div><pre><code class="language-scala">def abs(x: Int): Int = if (x &gt;= 0) x else -x</code></pre></div>
+
+<p><code>x &gt;= 0</code> is a predicate, of type Boolean. Boolean expressions can be composed of</p>
+
+<div><pre><code class="language-scala">true false      // Constants
+!b              // Negation
+b &amp;&amp; b          // Conjunction
+b || b          // Disjunction
+
+// Usual comparison operations:
+
+e &lt;= e, e &gt;= e. e &lt; e, e &gt; e, e == e, e != e</code></pre></div>
+
+<p>The rewrite rules fro Boolean expressions are (semantics is defined using the substitution model):</p>
+
+<div><pre><code class="language-none">!true           -&gt;      false
+!false          -&gt;      true
+true &amp;&amp; e       -&gt;      e
+false &amp;&amp; e      -&gt;      false       // Short-circuit evaluation
+true || e       -&gt;      true        // Short-circuit evaluation
+false || e      -&gt;      e</code></pre></div>
+
+<p>Example:</p>
+
+<div><pre><code class="language-none">if (b) e1 else e2
+
+eval(b) = true THEN
+    e1
+eval(b) = false THEN
+    e2</code></pre></div>
+
+<h3 id="toc_10">Value definitions</h3>
+
+<p>We&#39;ve seen the function parameters, can be passed by value, or be passed by name. The same applies to definitions. The <code>def</code> form, is <strong>by-name</strong> (its right hand side is evaluated on each use). The <code>val</code> form, id <strong>by-value</strong>.</p>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">val x = 2
+val y = square(x)</code></pre></div>
+
+<p>The right-hand side of a <code>val</code> definition, is evaluated at the point of the definition itself. Afterwards, the name refers to the value. For instance, <code>y</code> above refers to 4, not <code>square(2)</code>.</p>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">def and(x: Boolean, y: =&gt; Boolean) = if (x) y else false
+def or(x: Boolean, y: Boolean) = if (x) true else y</code></pre></div>
+
+<h2 id="toc_11">An example of a program: Newton&#39;s method</h2>
+
+<p>To calculate square roots with Newton&#39;s method. We will define a function with the following signature:</p>
+
+<div><pre><code class="language-scala">/** Calculate the square root of parameter x */
+def sqrt(x: Duble): Double = ...</code></pre></div>
+
+<p>The classical way to achieve that, is by successive approximations using Newton&#39;s method.</p>
+
+<p>Example: <code>x = 2</code></p>
+
+<ul>
+<li>Start with an initial positive number as guess (let&#39;s pick <code>y=1</code>)</li>
+<li>Repeatedly improve the estimate by taking the mean of <code>y</code> and <code>x/y</code></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Estimation</th>
+<th>Quotient</th>
+<th>Mean</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>2 / 1 = 2</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>2 / 1.5 = 1.333</td>
+<td>1.4167</td>
+</tr>
+<tr>
+<td>1.4167</td>
+<td>2 / 1.4167 = 1.4118</td>
+<td>1.4142</td>
+</tr>
+<tr>
+<td>1.4142</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre><code class="language-scala">
+val EPSILON = 0.000001
+
+def abs(x: Double) = if (x &lt; 0) -x else x
+
+// Recursive definitons need an explicit return type in Scala
+def newton(guess: Double, x: Double): Double =
+    if (isGoodEnough(guess, x)) guess
+    else newton(improve(guess, x), x)
+
+def isGoodEnough(guess: Double, x: Double) =
+    abs(guess * guess - x) &lt; EPSILON 
+
+def improve(guess: Double, x: Double) = 
+    (guess + x / guess) / 2
+
+def sqrt(x: Double) = newton(1.0, x)
+
+println(sqrt(2))
+println(sqrt(9))
+println(sqrt(25))
+</code></pre></div>
+
+<h2 id="toc_12">Blocks and lexical scoping</h2>
+
+<p>To develop a mechanism based on blocks and lexical scoping to organize programs. It&#39;s good for functional programming style to split up a task into many small functions. For example, the functions <code>abs, newton, isGoodEnough, improve</code>, matter only for the implementation of <code>sqrt</code>, not for its usage. Normally, we would not like users to access these functions directly. We can achieve the same functionality by putting those auxiliary functions inside <code>sqrt</code>.</p>
+
+<p>Blocks affects the visibility of variables in a program.</p>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">val x = 0
+def f(y: Int) = y + 1
+val result = {
+    val x = f(3)
+    x * x
+}</code></pre></div>
+
+<ul>
+<li>The definitions inside a block are only visible from within the block</li>
+<li>The definitions inside a block shadow definitions of the same names outside the block</li>
+</ul>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">val x = 0
+def f(y: Int) = y + 1
+val result = {
+    val x = f(3)
+    x * x
+} + x</code></pre></div>
+
+<p>The result value of the program, is 16.</p>
+
+<p>In Scala, semicolons at the end of the line are in most cases optional. If there are more than one statement on a line they need to be separated by semicolons.</p>
+
+<div><pre><code class="language-scala">val y = x + 1; y * y</code></pre></div>
+
+<p>Finally, a modified version of the Newton&#39;s method using blocks.</p>
+
+<div><pre><code class="language-scala">def abs(x: Double) = if (x &lt; 0) -x else x
+
+/* A block is delimited by brces, it may contain a sequence of definitions or 
+ * expressions. The last element (expression) of a block defines the value of 
+ * the block. This return expression, can be preceded by auxiliary definitions
+ * Blocks are themselves expressions; a block may appear everywhere an 
+ * expression can.
+*/
+def sqrt(x: Double) = {
+
+    val EPSILON = 0.000001  
+
+    // Recursive definitons need an explicit return type in Scala
+    def newton(guess: Double): Double =
+        if (isGoodEnough(guess)) guess
+        else newton(improve(guess))
+
+    def isGoodEnough(guess: Double) =
+        abs(guess * guess - x) / x &lt; EPSILON 
+
+    def improve(guess: Double) = 
+        (guess + x / guess) / 2
+
+    newton(1.0)
+}
+
+println(sqrt(2))
+println(sqrt(1e-6))
+println(sqrt(1e60))</code></pre></div>
+
+<h2 id="toc_13">Tail recursion</h2>
+
+<p>Review of function application: one evaluates a function application <code>f(e1, ..., en)</code>.</p>
+
+<ul>
+<li>By evaluating the exressions <code>e1, ..., en</code>resulting in the values <code>v1, ..., vn</code> then</li>
+<li>By replacing the application with the body of <code>f</code>, in which</li>
+<li>The actual parameters <code>v1, ..., vn</code> replace the formal parameters of <code>f</code></li>
+</ul>
+
+<p>This rewriting rule, can be formalized:</p>
+
+<div><pre><code class="language-none">def f(x1, ..., xn) = B; ... f(v1, ..., vn)
+-&gt; 
+def f(x1, ..., xn) = B; ... [v1 / x1, ..., vn / xn] B
+
+where [v1 / x1, ..., vn / xn] means
+The expression B in which all ocurrences of xi have been replaced by vi.
+
+[v1 / x1, ..., vn / xn] is called a substitution</code></pre></div>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">def gcd(a: Int, b: Int): Int = 
+    if (b == 0) a else gcd(b, a % b)
+        
+EXP: gcd(14, 21)
+eval(EXP)
+    if (21 == 0) 14 else gcd(21, 14 % 21)
+    gcd(21, 14 % 21)
+    gcd(21, 14)
+    if (14 == 0) 21 else gcd(14, 21 % 14)
+    gcd(14, 21 % 14)
+    gcd(14, 7)
+    if (7 == 0) 14 else gcd(7, 14 % 7)
+    gcd(7, 14 % 7)
+    gcd(7, 0)
+    if (0 == 0) 7 else gcd(0, 7 % 0)
+    7</code></pre></div>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">def factorial(n: Int): Int = 
+    if (n == 0) 1 else n * factorial(n - 1)
+    
+EXP: factorial(4)
+eval(EXP)
+    if (4 == 0) 1 else 4 * factorial(4 - 1)
+    4 * factorial(4 - 1)
+    4 * factorial(3)
+    ...
+    4 * (3 * factorial(2))
+    ...
+    4 * (3 * (2 * factorial(1)))
+    ...
+    4 * (3 * (2 * (1 * factorial(0))))
+    ...
+    4 * (3 * (2 * (1 * 1)))
+    4 * (3 * (2 * 1))
+    4 * (3 * 2)
+    4 * 6
+    24</code></pre></div>
+
+<p>The evaluation of <code>gcd</code>, oscillates. The evaluation of <code>factorial</code> adds some value to the final expression, so it become bigger and bigger in every step of the recursion. That difference in the rewriting rules, translates directly on the execution on the computer. If you have a recursive function that calls itself as its last action, then you can reuse the stack frame of that function (<strong>tail-recursion</strong>). So it&#39;s really another fomulation of an iterative procedure. In the <code>factorial</code> function, the recursive call is not the last action. After the call to <code>factorial(n - 1)</code> we still need to multiply it by <code>n</code>. So that call, is not tail-recursive, we need to keep something until we reach the final value. Tail recursion avoid very deep recursive chains, avoiding stack overflow related errors. But a non-tail recursive, could be clearer than its tail recursive version.</p>
+
+<p>(<em>Premature optimization is the root of all evil</em>) Donald E. Knuth</p>
+
+<h3 id="toc_14">A tail recursive version of factorial</h3>
+
+<div><pre><code class="language-scala">def factorial(n: Int) = {
+    def iter(acc: Int, n: Int): Int =
+        if (n == 0) acc
+        else iter(acc * n, n - 1)
+    iter(1, n)
+}</code></pre></div>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.java=Prism.languages.extend("clike",{keyword:/\b(abstract|continue|for|new|switch|assert|default|goto|package|synchronized|boolean|do|if|private|this|break|double|implements|protected|throw|byte|else|import|public|throws|case|enum|instanceof|return|transient|catch|extends|int|short|try|char|final|interface|static|void|class|finally|long|strictfp|volatile|const|float|native|super|while)\b/,number:/\b0b[01]+\b|\b0x[\da-f]*\.?[\da-fp\-]+\b|\b\d*\.?\d+(?:e[+-]?\d+)?[df]?\b/i,operator:{pattern:/(^|[^.])(?:\+[+=]?|-[-=]?|!=?|<<?=?|>>?>?=?|==?|&[&=]?|\|[|=]?|\*=?|\/=?|%=?|\^=?|[?:~])/m,lookbehind:!0}}),Prism.languages.insertBefore("java","function",{annotation:{alias:"punctuation",pattern:/(^|[^.])@\w+/,lookbehind:!0}});
+</script>
+
+<script type="text/javascript">
+Prism.languages.scala=Prism.languages.extend("java",{keyword:/<-|=>|\b(?:abstract|case|catch|class|def|do|else|extends|final|finally|for|forSome|if|implicit|import|lazy|match|new|null|object|override|package|private|protected|return|sealed|self|super|this|throw|trait|try|type|val|var|while|with|yield)\b/,string:/"""[\W\w]*?"""|"(?:[^"\\\r\n]|\\.)*"|'(?:[^\\\r\n']|\\.[^\\']*)'/,builtin:/\b(?:String|Int|Long|Short|Byte|Boolean|Double|Float|Char|Any|AnyRef|AnyVal|Unit|Nothing)\b/,number:/\b(?:0x[\da-f]*\.?[\da-f]+|\d*\.?\d+e?\d*[dfl]?)\b/i,symbol:/'[^\d\s\\]\w*/}),delete Prism.languages.scala["class-name"],delete Prism.languages.scala["function"];
+</script>
+
+<script type="text/javascript">
+Prism.languages.c=Prism.languages.extend("clike",{keyword:/\b(asm|typeof|inline|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while)\b/,operator:/\-[>-]?|\+\+?|!=?|<<?=?|>>?=?|==?|&&?|\|?\||[~^%?*\/]/,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)[ful]*\b/i}),Prism.languages.insertBefore("c","string",{macro:{pattern:/(^\s*)#\s*[a-z]+([^\r\n\\]|\\.|\\(?:\r\n?|\n))*/im,lookbehind:!0,alias:"property",inside:{string:{pattern:/(#\s*include\s*)(<.+?>|("|')(\\?.)+?\3)/,lookbehind:!0},directive:{pattern:/(#\s*)\b(define|elif|else|endif|error|ifdef|ifndef|if|import|include|line|pragma|undef|using)\b/,lookbehind:!0,alias:"keyword"}}},constant:/\b(__FILE__|__LINE__|__DATE__|__TIME__|__TIMESTAMP__|__func__|EOF|NULL|stdin|stdout|stderr)\b/}),delete Prism.languages.c["class-name"],delete Prism.languages.c["boolean"];
+</script>
+
+<script type="text/x-mathjax-config">
+if (typeof MathJaxListener !== 'undefined') {
+  MathJax.Hub.Register.StartupHook('End', function () {
+    MathJaxListener.invokeCallbackForKey_('End');
+  });
+}
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
