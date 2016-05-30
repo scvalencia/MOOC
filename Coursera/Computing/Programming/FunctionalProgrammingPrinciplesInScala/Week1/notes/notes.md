@@ -410,7 +410,117 @@ In Scala, semicolons at the end of the line are in most cases optional. If there
 ```scala
 val y = x + 1; y * y
 ```
+Finally, a modified version of the Newton's method using blocks.
+
+```scala
+def abs(x: Double) = if (x < 0) -x else x
+
+/* A block is delimited by brces, it may contain a sequence of definitions or 
+ * expressions. The last element (expression) of a block defines the value of 
+ * the block. This return expression, can be preceded by auxiliary definitions
+ * Blocks are themselves expressions; a block may appear everywhere an 
+ * expression can.
+*/
+def sqrt(x: Double) = {
+
+	val EPSILON = 0.000001	
+
+	// Recursive definitons need an explicit return type in Scala
+	def newton(guess: Double): Double =
+		if (isGoodEnough(guess)) guess
+		else newton(improve(guess))
+
+	def isGoodEnough(guess: Double) =
+		abs(guess * guess - x) / x < EPSILON 
+
+	def improve(guess: Double) = 
+		(guess + x / guess) / 2
+
+	newton(1.0)
+}
+
+println(sqrt(2))
+println(sqrt(1e-6))
+println(sqrt(1e60))
+```
 
 ## Tail recursion
 
-$$\sum_{i=0}^n i = \frac{n(n - 1)}{2}$$
+Review of function application: one evaluates a function application ```f(e1, ..., en)```.
+
+* By evaluating the exressions ```e1, ..., en```resulting in the values ```v1, ..., vn``` then
+* By replacing the application with the body of ```f```, in which
+* The actual parameters ```v1, ..., vn``` replace the formal parameters of ```f```
+
+This rewriting rule, can be formalized:
+
+```
+def f(x1, ..., xn) = B; ... f(v1, ..., vn)
+-> 
+def f(x1, ..., xn) = B; ... [v1 / x1, ..., vn / xn] B
+
+where [v1 / x1, ..., vn / xn] means
+The expression B in which all ocurrences of xi have been replaced by vi.
+
+[v1 / x1, ..., vn / xn] is called a substitution
+```
+Example:
+
+```scala
+def gcd(a: Int, b: Int): Int = 
+	if (b == 0) a else gcd(b, a % b)
+		
+EXP: gcd(14, 21)
+eval(EXP)
+	if (21 == 0) 14 else gcd(21, 14 % 21)
+	gcd(21, 14 % 21)
+	gcd(21, 14)
+	if (14 == 0) 21 else gcd(14, 21 % 14)
+	gcd(14, 21 % 14)
+	gcd(14, 7)
+	if (7 == 0) 14 else gcd(7, 14 % 7)
+	gcd(7, 14 % 7)
+	gcd(7, 0)
+	if (0 == 0) 7 else gcd(0, 7 % 0)
+	7
+```
+
+Example:
+
+```scala
+def factorial(n: Int): Int = 
+	if (n == 0) 1 else n * factorial(n - 1)
+	
+EXP: factorial(4)
+eval(EXP)
+	if (4 == 0) 1 else 4 * factorial(4 - 1)
+	4 * factorial(4 - 1)
+	4 * factorial(3)
+	...
+	4 * (3 * factorial(2))
+	...
+	4 * (3 * (2 * factorial(1)))
+	...
+	4 * (3 * (2 * (1 * factorial(0))))
+	...
+	4 * (3 * (2 * (1 * 1)))
+	4 * (3 * (2 * 1))
+	4 * (3 * 2)
+	4 * 6
+	24
+```
+
+The evaluation of ```gcd```, oscillates. The evaluation of ```factorial``` adds some value to the final expression, so it become bigger and bigger in every step of the recursion. That difference in the rewriting rules, translates directly on the execution on the computer. If you have a recursive function that calls itself as its last action, then you can reuse the stack frame of that function (**tail-recursion**). So it's really another fomulation of an iterative procedure. In the ```factorial``` function, the recursive call is not the last action. After the call to ```factorial(n - 1)``` we still need to multiply it by ```n```. So that call, is not tail-recursive, we need to keep something until we reach the final value. Tail recursion avoid very deep recursive chains, avoiding stack overflow related errors. But a non-tail recursive, could be clearer than its tail recursive version.
+
+(*Premature optimization is the root of all evil*) Donald E. Knuth
+
+### A tail recursive version of factorial
+
+```scala
+def factorial(n: Int) = {
+	def iter(acc: Int, n: Int): Int =
+		if (n == 0) acc
+		else iter(acc * n, n - 1)
+	iter(1, n)
+}
+```
