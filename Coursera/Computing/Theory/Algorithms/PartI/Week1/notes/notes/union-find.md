@@ -660,6 +660,33 @@ public class WeightedQuickUnionPathCompressionUF {
 * Each site is open with probability `p`
 * The system **percolates** iff top and bottom are connected by open sites
 
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/perc1-2016-06-01%2013.22.07.png)
+
+Likelihood of percolations, depends on site vacancy probability `p`. How do we know wheter is it going to percolate, to find the threshold.
+
+ **Monte Carlo simulation**
+
+- Initialize the whole grid to be blocked
+- Declare random sites open until top cpnnected to bottom
+- Vacancy percentage estimates `p*`
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/perc2-2016-06-01%2013.22.07.png)
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/perc3-2016-06-01%2013.22.07.png)
+
+Percolates iff any site on bottom row is connected to site on topb row.
+`N^2` calls to `connected()`. Instedad, we create virtual sites at the top and at the botton. So it perculates iff the top virtual node, is connected to the top botton site.
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/perc4-2016-06-01%2013.22.07.png)
+
+To model opening a new site, we connect it to its adjacent open sites 
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/perc5-2016-06-01%2013.22.07.png)
+
+The percolation threshold, is about 0.592746.
+
+
+
 
 
 
