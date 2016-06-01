@@ -197,6 +197,7 @@ public class QuickFindUF {
 	public boolean connected(int p, int q) {
 		return this.id[p] == this.id[q];
 	}	
+	
 }
 ```
 
@@ -366,7 +367,8 @@ public class QuickUnionUF {
 		int rp = root(p);
 		int rq = root(q);
 		id[rp] = rq;
-	}	
+	}
+	
 }
 ```
 
@@ -374,7 +376,278 @@ The tree can get too tall. So can we do better?
 
 ### Union-Find: Improvements
 
-#### fsgd
+#### Weighting (the smaller tree goes below)
+
+When implementing quick-unions, take steps to avid large trees:
+
+* Keep track of size of each tree
+* Balance by linking root of smaller tree to root of the larger tree
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/uf2016-06-01%2011.05.26.png)
+
+**Data structure:** Same as quick-union, but mantain extra array `sz[i]`, to count number of objects in the tree rooted at `i`.
+
+**Find:** Identical to quick-union.
+
+```java
+return root(p) == root(q);
+```
+
+Takes time proportional to depth of `p` and `q`.
+
+**Union:** Check the sizes and link the root of the smaller tree to the root of the largest tree. And update the size of the array.
+
+```java
+int i = root(p);
+int j = root(q);
+
+if (i == j) return;
+
+if (sz[i] < sz[j]) {
+	id[i] = j;
+	sz[j] += sz[i];
+} else {
+	id[j] = i;
+	sz[i] += sz[j];
+}
+```
+
+Takes constant time, given roots.
+
+**Proposition:** Depth of any node `x` is at most `log(N)`
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/uf2016-06-01%2011.15.43.png)
+
+**Proof:** When does the depth of `x` increase?
+
+Increase by 1 when tree `T1` containing `x` is merged into another tree `T2`.
+
+* The size of the tree containing `x` at least doubles since `|T2| >= |T1|`.
+* Size of tree containing `x`, can double at most `log(N)` times. Why?
+
+If you start with one, and doubles `log(N)` times, you get `N`, and there's only `N` nodes in the tree.
+
+```
+A = {1, 2, 4, 8, 16, ..., N} => |A| = log(N)
+```
+
+| Algorithm     | Initialize  | Union  | Connected |
+| ------------- |-------------|--------|-----------|
+|quick-find     |`N`       |`N`		| 1	     |
+|quick-union    |`N`       |`N`		| `N`	     |
+|weighted QU    |`N`      |`log(N)`| `log(N)`	     |
+
+#### Path compression (keeps tree completely flat)
+
+Just after computing the root of `p`, set the `id` of each examined node to point to that root. When finding the root of `p`, make every node in that path, point to the root.
+
+```java
+// Two-pass implementation
+private int root(int i) {
+	List<Integer> path = new ArrayList<Integer>();
+	while(id[i] != i) {
+		path.append(id[i]);
+		i = id[i];
+	}
+	
+	for(Integer node : path) 
+		id[node] = i;
+		
+	return i;
+}
+
+// Simpler one-pass variant
+private int root(int i) {
+	while(id[i] != i) {
+		id[i] = id[id[i]];
+		i = id[i];
+	}
+	return i;
+}
+```
+
+Example:
+
+To find the root of the node labeled with 9, we compress its path up to the root.
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/ufpc1-2016-06-01%2012.08.30.png)
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/ufpc2-2016-06-01%2012.08.30.png)
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/ufpc3-2016-06-01%2012.08.30.png)
+
+![](https://raw.githubusercontent.com/scvalencia/MOOC/master/img/ufpc4-2016-06-01%2012.08.30.png)
+
+### Implementations
+
+```java
+public class QuickFindUF {
+	public int[] id;
+    public int count; 
+    
+    public QuickFindUF(int N) {
+        count = N;
+        id = new int[N];
+        for (int i = 0; i < N; i++)
+            id[i] = i;
+   	}
+   	
+   	public int find(int p) {
+        return id[p];
+    }
+    
+    public boolean connected(int p, int q) {
+        return id[p] == id[q];
+    }
+  
+    public void union(int p, int q) {
+        int pID = id[p];   // needed for correctness
+        int qID = id[q];   // to reduce the number of array accesses
+
+        // p and q are already in the same component
+        if (pID == qID) return;
+
+        for (int i = 0; i < id.length; i++)
+            if (id[i] == pID) id[i] = qID;
+        count--;
+    }
+}
+```
+
+```java
+public class QuickUnionUF {
+	public int[] parent;
+    public int count; 
+    
+    public QuickUnionUF(int N) {
+        parent = new int[N];
+        count = N;
+        for (int i = 0; i < N; i++)
+            parent[i] = i;
+    }
+   	
+   	public int find(int p) {
+        while (p != parent[p])
+            p = parent[p];
+        return p;
+    }
+    
+    public boolean connected(int p, int q) {
+        return find(p) == find(q);
+    }
+  
+    public void union(int p, int q) {
+        int rootP = find(p);
+        int rootQ = find(q);
+        if (rootP == rootQ) return;
+        parent[rootP] = rootQ; 
+        count--;
+    }
+}
+```
+
+```java
+public class WeightedQuickUnionUF {
+	public int[] parent;
+	private int[] size;
+    public int count; 
+    
+    public WeightedQuickUnionUF(int N) {
+        count = N;
+        parent = new int[N];
+        size = new int[N];
+        for (int i = 0; i < N; i++) {
+            parent[i] = i;
+            size[i] = 1;
+        }
+    }
+   	
+   	public int find(int p) {
+        while (p != parent[p])
+            p = parent[p];
+        return p;
+    }
+    
+    public boolean connected(int p, int q) {
+        return find(p) == find(q);
+    }
+  
+    public void union(int p, int q) {
+        int rootP = find(p);
+        int rootQ = find(q);
+        if (rootP == rootQ) return;
+
+        // make smaller root point to larger one
+        if (size[rootP] < size[rootQ]) {
+            parent[rootP] = rootQ;
+            size[rootQ] += size[rootP];
+        } else {
+            parent[rootQ] = rootP;
+            size[rootP] += size[rootQ];
+        }
+        count--;
+    }
+}
+```
+
+```java
+public class WeightedQuickUnionPathCompressionUF {
+	public int[] parent;
+	private int[] size;
+    public int count; 
+    
+    public WeightedQuickUnionPathCompressionUF(int N) {
+        count = N;
+        parent = new int[N];
+        size = new int[N];
+        for (int i = 0; i < N; i++) {
+            parent[i] = i;
+            size[i] = 1;
+        }
+    }
+   	
+   	public int find(int p) {
+        validate(p);
+        int root = p;
+        while (root != parent[root])
+            root = parent[root];
+        while (p != root) {
+            int newp = parent[p];
+            parent[p] = root;
+            p = newp;
+        }
+        return root;
+    }
+    
+    public boolean connected(int p, int q) {
+        return find(p) == find(q);
+    }
+  
+    public void union(int p, int q) {
+        int rootP = find(p);
+        int rootQ = find(q);
+        if (rootP == rootQ) return;
+
+        // make smaller root point to larger one
+        if (size[rootP] < size[rootQ]) {
+            parent[rootP] = rootQ;
+            size[rootQ] += size[rootP];
+        } else {
+            parent[rootQ] = rootP;
+            size[rootP] += size[rootQ];
+        }
+        count--;
+    }
+}
+```
+
+### Applications
+
+
+
+
+
+
 
 
  
