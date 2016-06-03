@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>notes</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Higher order functions</h1>
+
+<h2 id="toc_1">Introduction</h2>
+
+<p>Higher-order functions, allow you to pass functions as arguments, and to return functions from other functions. Functional programming languages, treat functions as first-class values. This means that like any other value, functions can be passed as a parameter, and returned as a result. This provides a flexible way to compose and design programs.</p>
+
+<p><strong>Higher-order function</strong>: A function that take other functions as parameters or returns other functions as results. A <strong>first-order functions</strong>, acts on values of normal data types (not functions per se).</p>
+
+<p>Example:</p>
+
+<p>We desire to design a functions to compute:</p>
+
+<p>\[\sum_{i = a}^{b} i\]</p>
+
+<div><pre><code class="language-scala">def sumInts(a: Int, b: Int): Int = 
+    if (a &gt; b) 0 else a + sumInts(a + 1, b)</code></pre></div>
+
+<p>Now we desire to find the sum if the cubes between <code>a</code> and <code>b</code>.</p>
+
+<div><pre><code class="language-scala">def cube(x: Int): Int = x * x * x
+
+def sumCubes(a: Int, b: Int): Int =
+    if (a &gt; b) 0 else cube(a) + sumCubes(a + 1, b)</code></pre></div>
+
+<p>Now, we want to find the sum of the factorials between <code>a</code> and <code>b</code>.</p>
+
+<div><pre><code class="language-scala">def factorial(n: Int) = {
+
+    def iter(acc: Int, n: Int): Int =
+        if (n == 0) acc
+        else iter(acc * n, n - 1)
+        
+    iter(1, n)
+}
+
+def sumFactorial(a: Int, b: Int): Int = 
+    if (a &gt; b) 0 else factorial(a) + sumFactorial(a + 1, b)</code></pre></div>
+
+<p>All of the above functions, are special cases of:</p>
+
+<p>\[\sum_{i = a}^{b} f(i),\ f \in \{ Id,\ cube,\ fact\} \wedge\ f\ :\ \mathbb{Z}\ \rightarrow \mathbb{Z}\]</p>
+
+<p>Can we factor this under a common pattern?</p>
+
+<p>Let&#39;s define a function <code>sum</code>:</p>
+
+<div><pre><code class="language-scala">def sum(f: Int =&gt; Int, a: Int, b: Int) = {
+
+    def innersum(a: Int, b: Int): Int =
+        if (a &gt; b) 0 else f(a) + innersum(a + 1, b)
+        
+    innersum(f, a, b)   
+}
+
+def id(x: Int) = x
+
+def cube(x: Int) = x * x * x
+
+def factorial(n: Int) = {
+    def iter(acc: Int, n: Int): Int =
+        if (n == 0) acc
+        else iter(acc * n, n - 1)
+    iter(1, n)
+}
+
+def sumInts(a: Int, b: Int)         = sum(id, a, b)
+def sumCubes(a: Int, b: Int)        = sum(cubes, a, b)
+def sumFactorials(a: Int, b: Int)   = sum(factorial, a, b)</code></pre></div>
+
+<p>The type <code>A =&gt; B</code>, is the type of a <strong>function</strong> that takes an argment of type <code>A</code>, and returns a result of type <code>B</code>. For instance <code>Int =&gt; Int</code>, is the type of maps from integers to integers.</p>
+
+<p>There&#39;s an annoying detail in the presented code, that is, the declaration of the auxiliary functions <code>id</code>, <code>cube</code>, and <code>factorial</code>. So passing functions as paramters, can lead to the creating of unnecessary auxiliar functions, as oposed to simple data types, where passing those as parameters, does not require a prior declaration.</p>
+
+<div><pre><code class="language-scala">def name = &quot;Hola&quot;
+println(name)
+
+println(&quot;Hola&quot;)</code></pre></div>
+
+<p>Because strings exists as literals, one can do that. Since functions are supposed to be first-class citizens, functional programming languages tend to provide a flexible mechanism to use function literals, these are called <strong>anonymous functions</strong>.</p>
+
+<div><pre><code class="language-scala">(x: Int) =&gt; x * x * x
+(x: Int, y: Int) =&gt; x + x</code></pre></div>
+
+<p>In Scala, an anonymous functions <code>(x1: T1, ..., xn: Tn) =&gt; E</code>, can always be expresses using <code>def</code>, that is: <code>def f(x1: T1, ..., xn: Tn) =&gt; E; f</code> (usaully inside a block), where <code>f</code>, is an arbitrary, fresh name (that&#39;s not yet used in the program).</p>
+
+<p>Using anonymous functions, we can express the program as follows:</p>
+
+<div><pre><code class="language-scala">def sum(f: Int =&gt; Int, a: Int, b: Int) = {
+    def innersum(a: Int, b: Int): Int =
+        if (a &gt; b) 0 else f(a) + innersum(a + 1, b)
+    innersum(a, b)  
+}
+
+val fact: (Int =&gt; Int) = (x: Int) =&gt; if (x &lt; 2) 1 else x * fact(x - 1)
+
+// Infered type of the anonymous function
+def sumInts(a: Int, b: Int)         = sum(x =&gt; x, a, b)
+def sumCubes(a: Int, b: Int)        = sum(x =&gt; x * x * x, a, b)
+def sumFactorials(a: Int, b: Int)   = sum(fact, a, b)</code></pre></div>
+
+<p>A tail-recursive version of sum is:</p>
+
+<div><pre><code class="language-scala">def sum(f: Int =&gt; Int, a: Int, b: Int) = {
+
+    def loop(a: Int, acc: Int): Int = {
+        if (a &gt; b) acc
+        else loop(a + 1, f(a) + acc)
+    }
+    
+    loop(a, 0)
+}</code></pre></div>
+
+<h2 id="toc_2">Currying</h2>
+
+<p>Higher-order functions are basic building blocks of functional program, there exists a special form to write them in many functional programming languages.</p>
+
+<p>The summations functions defined above are:</p>
+
+<div><pre><code class="language-scala">def sumInts(a: Int, b: Int)         = sum(id, a, b)
+def sumCubes(a: Int, b: Int)        = sum(cubes, a, b)
+def sumFactorials(a: Int, b: Int)   = sum(factorial, a, b)</code></pre></div>
+
+<p>Can we factor out the passing of <code>a</code>, and <code>b</code>?</p>
+
+<div><pre><code class="language-scala">/* sum is now a function that returns another function. 
+ * The returned function applies the given function parameter 
+ *f and sums the results
+ */
+ 
+def sum(f: Int =&gt; Int): (Int, Int) =&gt; Int = {
+    def inner(a: Int, b: Int): Int = 
+        if (a &gt; b) 0
+        else f(a) + inner(a + 1, b)
+    inner
+}
+
+def sumInts(a: Int, b: Int)         = sum(x =&gt; x)
+def sumCubes(a: Int, b: Int)        = sum(x =&gt; x * x * x)
+def sumFactorials(a: Int, b: Int)   = sum(factorial)
+
+val summation1 = sumInts(0, 10)
+
+// Holds the value 55
+val summation2 = sum(x =&gt; x)(0, 10)</code></pre></div>
+
+<p>Functon applications associates to the left:</p>
+
+<div><pre><code class="language-scala">sum(x =&gt; x)(1, 10) === (sum(x =&gt; x)) (1, 10)</code></pre></div>
+
+<p>Scala has syntactic sugar for functions that return functions as values. For instance, the following definition of <code>sum</code>, is equivalent to the one with the nested <code>inner</code> function above.</p>
+
+<div><pre><code class="language-scala">def sum(f: Int =&gt; Int)(a: Int, b: Int): Int = {
+    if (a &gt; b) 0 else f(a) + sum(f)(a + 1, b)
+}</code></pre></div>
+
+<p>This allow you to write <code>sum(x =&gt; x)</code>. In general, a definition of a function with multiple parameter list:</p>
+
+<p><code>def f(args1)...(argsn) = E, n &gt; 1</code> is equivalent to
+<code>def f(args1)...(argsn-1) = {def g(argsn) = E; g}</code>, or in short:
+<code>def f(args1)...(argsn-1) = (argsn) =&gt; E</code></p>
+
+<p>Repeating the process <code>n</code> times, <code>def f(args1)...(argsn-1)(argsn) = E</code>, is equivalent to:
+<code>def f = (args1 =&gt; (args2 =&gt; ... (argsn =&gt; E)...))</code>. This style of definition and function applications, is called <strong>currying</strong>, named after Haskell Brooks Curry, a twentieth century logician. The idea goes back even further to Schöenfinkel and Frege, buth the term <strong>currying</strong> has stuck. The idea behind it, is that the original parameter list functions, is mapped to a function withour parameters, but where the definition of it consists of <code>n</code> nested anonymous functions.</p>
+
+<p>Given a function whose header is:</p>
+
+<div><pre><code class="language-scala">def sum(f: Int =&gt; Int)(a: Int, b: Int): Int = ...</code></pre></div>
+
+<p>its type is:</p>
+
+<div><pre><code class="language-scala">(Int =&gt; Int) =&gt; (Int, Int) =&gt; Int
+
+// Since functional types associates to the right
+Int =&gt; Int =&gt; Int equiv Int =&gt; (Int =&gt; Int)</code></pre></div>
+
+<p>Execise:</p>
+
+<ul>
+<li>Write a <code>product</code> function that calculates the product of the values of a function for the points on a given interval.</li>
+</ul>
+
+<div><pre><code class="language-scala">def product(f: Int =&gt; Int)(a: Int, b: Int): Int = {
+    if (a &gt; b) 1 else f(a) * product(f)(a + 1, b)
+}</code></pre></div>
+
+<ul>
+<li>Write <code>factorial</code> in terms of <code>product</code>.</li>
+</ul>
+
+<div><pre><code class="language-scala">def factorial(n: Int): Int = {
+    product(x =&gt; x)(1, n)
+}</code></pre></div>
+
+<ul>
+<li>Write a more general function, that generalizes both <code>sum</code>, and <code>product</code>.</li>
+</ul>
+
+<div><pre><code class="language-scala">def general(f: Int =&gt; Int, operation: (Int, Int) =&gt; Int, identity: Int)
+    (a: Int, b: Int): Int = {
+        if (a &gt; b) identity 
+        else operation(f(a), general(f, operation, identity)(a + 1, b))
+}
+
+def sum(f: Int =&gt; Int)(a: Int, b: Int): Int = 
+    general(f, (x, y) =&gt; x + y, 0)(a, b)
+    
+def product(f: Int =&gt; Int)(a: Int, b: Int): Int =
+     general(f, (x, y) =&gt; x * y, 1)(a, b)</code></pre></div>
+
+<h2 id="toc_3">An example, finding fixed-points</h2>
+
+<p>A number <code>x</code>, is called a fixed point of a function <code>f</code> if <code>f(x) = x</code>. For some functions <code>f</code>, we can locate the fixed pointd by starting with an initial estimate and then by applying <code>f</code> in a repetitive way.</p>
+
+<div><pre><code class="language-none">x, f(x), f(f(x)), f(f(f(x))), ...</code></pre></div>
+
+<p>until the value does not vary anymore (or the change is sufficiently small). This definition, leads to:</p>
+
+<div><pre><code class="language-scala">import math.abs
+
+val EPSILON = 0.00001
+
+def isCloseEnough(x: Double, y: Double) =
+    abs((x - y) / x) / x &lt; EPSILON
+    
+def fixedPoint(f: Double =&gt; Double)(firstGuess: Double) = {
+    def iterate(guess: Double): Double = {
+        val next = f(guess)
+        if (isCloseEnough(guess, next)) next
+        else iterate(next)
+    }
+    iterate(firstGuess)
+}</code></pre></div>
+
+<p><code>sqrt(x)</code> is the number <code>y</code> such that <code>y * y = x THEN y = x / y THEN sqrt(x)</code>, is a fixed point of the function <code>y =&gt; x / y</code>. With that in mind, we can revisit the <code>sqrt(x)</code> example.</p>
+
+<div><pre><code class="language-scala">def sqrt(x: Double) = fixedPoint(y =&gt; (y + x / y) / 2)(1)</code></pre></div>
+
+<p>The previous example have shown that the expressive power of a language is greatly increased if we can pass functions arguments. The following example shows that functions that return functions can also be very useful.</p>
+
+<p>Consider again iteration towards fixed point. We begin by observing that \(\sqrt{x}\) is a fixed point of the function <code>y =&gt; y / x</code> . Then the iteration converges by averaging successive values. This technique <strong>stabilizing by averaging</strong> is general enough to merit being abstracted into its own function. </p>
+
+<div><pre><code class="language-scala">def averageDamp(f: Double =&gt; Double)(x: Double) = (x + f(x)) / 2</code></pre></div>
+
+<p>Exerciese: Given <code>fixedPoint()</code>, and <code>averageDamp()</code>, write a square root function that makes use of both of them.</p>
+
+<div><pre><code class="language-scala">def sqrt(x: Double) = {
+    val average = averageDamp(y =&gt; x / y)(1)
+    fixedPoint(average)
+}</code></pre></div>
+
+<h2 id="toc_4">Scala syntax</h2>
+
+<p>EBNF (Extnder Backus-Naur form)</p>
+
+<div><pre><code class="language-none">| denotes an alternative
+[...] an option (0 or 1)
+{...} a repetition (0 or more)</code></pre></div>
+
+<div><pre><code class="language-none">Types        := SimpleType | FunctionType
+FunctonType  := SimpleType &#39;=&gt;&#39; Type | &#39;(&#39; [Types] &#39;)&#39; &#39;=&gt;&#39; Type
+SimpleType   := &#39;Int&#39; | &#39;Double&#39; | &#39;Byte&#39; | &#39;Short&#39; | &#39;Char&#39; | &#39;Long&#39; 
+              | &#39;Float&#39; | &#39;Boolean&#39;
+Types        := Type {&#39;,&#39; Type}
+Epr          := InfixExpr | FunctionExpr 
+              | if &#39;(&#39; Exp &#39;)&#39; Expr else Expr
+InfixExpr    := PrefixExpr | InfixExpr Operator InfixExpr
+Operator     := ident
+PrefixExpr   := [&#39;+&#39; | &#39;-&#39; | &#39;!&#39; | &#39;~&#39;] SimpleExpr
+SimpleExpr   := ident | literal | SimpleExpr &#39;.&#39; ident | Block
+FunctionExpr := Binding &#39;=&gt;&#39; Expr
+Binding      := ident [&#39;:&#39; SimpleType] | &#39;(&#39; [Binding {&#39;,&#39; Binding}] &#39;)&#39;
+Binding      := ident [&#39;:&#39; Type]
+Block        := &#39;{&#39; {Def &#39;;&#39;} Expr &#39;}&#39;
+Def          := FunDef | ValDef
+FunDef       := &#39;def&#39; ident {&#39;(&#39; [Parameters] &#39;)&#39;} [&#39;:&#39; Type] &#39;=&#39; Expr
+ValDef       := &#39;val&#39; ident [&#39;:&#39; Type] &#39;=&#39; Expr
+Parameter    := ident &#39;:&#39; [ &#39;=&gt;&#39; ] Type
+Parameters   := Parameter {&#39;,&#39; Parameter}</code></pre></div>
+
+<p><img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/img/scala-syntax-2016-06-02%2011.42.11.png" alt=""></p>
+
+<p><img src="https://raw.githubusercontent.com/scvalencia/MOOC/master/img/scala-syntax-2016-06-02%2011.50.38.png" alt=""></p>
+
+<h2 id="toc_5">Data and functions</h2>
+
+<p>In Scala, one can package data by defining a <strong>class</strong></p>
+
+<div><pre><code class="language-scala">class Rational(x: Int, y: Int) {
+    def numer = x
+    def denom = y
+}</code></pre></div>
+
+<p>This definition introduces two entities:</p>
+
+<ul>
+<li>A new type, named <code>Rational</code></li>
+<li>A constructor <code>Rational</code> to create elements of this type</li>
+</ul>
+
+<p>Scala keeps the names of types and values in different namespaces. So there&#39;s no conflict between the two definition (constructor and type). A <strong>type</strong>, is a collection of elements. Elements of a class, are called <strong>objects</strong>. We create an object, by prefixing an application of the constructor of the class with the operator <code>new</code>.</p>
+
+<div><pre><code class="language-scala">new Rational(1, 2)</code></pre></div>
+
+<p>Objects of the class <code>Rational</code>, have two members, <code>numer</code>, and
+<code>denom</code>. We select the members of an object with the infix operator &#39;.&#39; (like in Java). We can now define the arithmetic functions that implement the standard rules:</p>
+
+<p>\[\frac{n_1}{d_1} + \frac{n_1}{d_1} = \frac{n_1d_2+n_2d_1}{d_1d_2}\]</p>
+
+<p>\[\frac{n_1}{d_1} - \frac{n_1}{d_1} = \frac{n_1d_2-n_2d_1}{d_1d_2}\]</p>
+
+<p>\[\frac{n_1}{d_1} \times \frac{n_1}{d_1} = \frac{n_1n_2}{d_1d_2}\]</p>
+
+<p>\[\frac{n_1}{d_1} \div \frac{n_1}{d_1} = \frac{n_1d_2}{d_1n_2}\]</p>
+
+<p>\[\frac{n1}{d1} = \frac{n1}{d1} \iff n_1d_2 = d_1n_2\]</p>
+
+<p>We can package the functions operating on a data abstraction in the data abstraction itself. Such functions, are called methods.</p>
+
+<div><pre><code class="language-scala">class Rational(x: Int, y: Int) {
+
+    private def gcd(a: Int, b: Int): Int = 
+        if (b == 0) a else gcd(b, a % b)
+
+    private val common = gcd(x, y)
+
+    def numer = x / common
+    def denom = y / common
+
+    def add(that: Rational) = {
+        val ansnumer = this.numer * that.denom + that.numer * this.denom
+        val ansdenom = this.denom * that.denom
+        new Rational(ansnumer, ansdenom)
+    }
+
+    def sub(that: Rational) = {
+        val ansnumer = this.numer * that.denom - that.numer * this.denom
+        val ansdenom = this.denom * that.denom
+        new Rational(ansnumer, ansdenom)
+    }
+
+    def mul(that: Rational) = {
+        val ansnumer = this.numer * that.numer
+        val ansdenom = this.denom * that.denom
+        new Rational(ansnumer, ansdenom)
+    }
+
+    def div(that: Rational) = {
+        val ansnumer = this.numer * that.denom
+        val ansdenom = this.denom * that.numer
+        new Rational(ansnumer, ansdenom)
+    }
+
+    def neg() = new Rational(-this.numer, this.denom)
+
+    def less(that: Rational) = 
+        this.numer * that.denom &lt; that.numer * this.denom
+
+    def max(that: Rational) = 
+        if (this.less(that)) that else this
+
+    override def toString() =
+        this.numer + &quot;/&quot; + this.denom
+}</code></pre></div>
+
+<p>We could instead of calculate <code>gcd</code> immediately, calculate it every time each class member is called:</p>
+
+<div><pre><code class="language-scala">def numer = x / gcf(x, y)
+def denom = y / gcd(x, y)</code></pre></div>
+
+<p>That could be an adventage if each member is not called oftenly. An alternative, would be to declare those as <code>vals</code>, so each one, is computed only once. No matter which implementation we use, the client observe exactly the same behavior each case.</p>
+
+<p>One can impose restrictions in the creation and manipulation of <code>Rational</code> objects. There are to alternatives, to add a <code>require</code> inside of the class:</p>
+
+<div><pre><code class="language-scala">class Rational(x: Int, y: Int) {
+    require(y != 0, &quot;The denominator, must be a positive Integer&quot;
+    ...</code></pre></div>
+
+<p>If the requie test fails, it throws an <code>IllegalArgumentException</code>. Another alternative, is to use <code>assert</code>. A failing <code>assert</code> will throw an <code>AsertionError</code>.</p>
+
+<ul>
+<li><code>require</code> is used to enforce a precondition on the caller of a function</li>
+<li><code>assert</code> is used as to check the code of the function itself</li>
+</ul>
+
+<div><pre><code class="language-scala">val x = sqrt(y)
+assert(x &gt;= 0)</code></pre></div>
+
+<p>Another syntactic construct, is <strong>constructors</strong>. Scala provides a primary constructor, that takes the parameters of the class, and executes all statements in the class body. A class can have several constructors, one can define a secondary constructor, using <code>this</code> as a function:</p>
+
+<div><pre><code class="language-scala">class Rational(x: Int, y: Int) {
+
+    def this(x: Int) = this(x, 1)
+    ...</code></pre></div>
+
+<h2 id="toc_6">The evaluation of objects</h2>
+
+<p>So far, we have develop a model for the evaluation of pure functions using the substitution model. Now we extend it to classes and objects. The evaluation of the expression (instantiation)</p>
+
+<div><pre><code class="language-scala">new C(e1, ..., em)</code></pre></div>
+
+<p>is done, first by evaluationg each <code>ei</code>. That&#39;s it. The resulting expression <code>new C(v1,...,vm)</code>, is already a value.</p>
+
+<p>Given a class definition:</p>
+
+<div><pre><code class="language-scala">class C(x1, ..., xm) {
+    ... 
+    def f(y1,...,yn) = b 
+    ...
+}</code></pre></div>
+
+<p>where</p>
+
+<ul>
+<li>The formal parameters of the class are <code>x1,...,xm</code></li>
+<li>The class defines a method <code>f</code> with formal parameters <code>y1,...,yn</code></li>
+</ul>
+
+<p>How is the following expression evaluated?</p>
+
+<div><pre><code class="language-scala">new C(v1,...,vm).f(w1,...,wm)</code></pre></div>
+
+<p>This expression, is rewritten to:</p>
+
+<div><pre><code class="language-scala">[w1 / y1, ..., wn / yn]
+    [v1 / x1,..., vm / xm]
+        [new C(v1,...,vm) / this]
+            (b)</code></pre></div>
+
+<p>Thre are three substitutions:</p>
+
+<ul>
+<li>The parameters of the function <code>f</code>, are replaced by its values</li>
+<li>The parameters of the class <code>C</code>, are substituted by the class arguments</li>
+<li><code>this</code>, substitutes <code>new C(v1,...,vm)</code></li>
+</ul>
+
+<p>Example:</p>
+
+<div><pre><code class="language-scala">EXP: new Rational(1, 2).number
+eval(EXP)
+    [1 / x, 2 / y]
+        []
+            [new Rational(1, 2) / this]
+                (x)
+    = 1
+</code></pre></div>
+
+<div><pre><code class="language-scala">EXP: new Rational(1, 2).less(new Rational(2, 3))
+eval(EXP)
+    [1 / x, 2 / y]
+        [new Rational(2, 3) / that]
+            [new Rational(1, 2) / this]
+                (this.number * that.denom &lt; that.number * this.denom)
+                
+    = new Rational(1, 2).number * new Rational(2, 3).denom &lt; 
+        new Rational(2, 3).number * new Rational(1, 2).denom
+    = Applying the first substitution 
+    = 1 * 3 &lt; 2 * 2
+    = true</code></pre></div>
+
+<h3 id="toc_7">Operators:</h3>
+
+<p>In principle, the rational numbers defined by <code>Rational</code> are as natural as integrs. But for the user of these abstraction, there is a noticeable difference, we write <code>x + y</code>, if <code>x</code>and <code>y</code> are integers, but we write <code>r.add(x)</code> if <code>r</code> and <code>s</code> are <code>Rational</code> objects. Scala provides a construct for the elimination of this difference. Any method with one parameter, can be used as an infix opertor in Scala:</p>
+
+<p>Threrefore is possible to write:</p>
+
+<div><pre><code class="language-scala">r add s /* in place of */ r.add(s)
+r max s /* in place of */ r.max(s)
+r less s /* in place of */ r.less(s)</code></pre></div>
+
+<p>Operators can be used as identifiers, in Scala identifiers can be symbolic and alphanumeric.</p>
+
+<div><pre><code class="language-none">x1  *   +?%&amp;    vector_++   counter_=</code></pre></div>
+
+<p>Our class could be rewritten as:</p>
+
+<div><pre><code class="language-scala">class Rational(x: Int, y: Int) {
+
+    private def gcd(a: Int, b: Int): Int = 
+        if (b == 0) a else gcd(b, a % b)
+
+    private val common = gcd(x, y)
+
+    def numer = x / common
+    def denom = y / common
+
+    def this(x: Int) = this(x, 1)
+
+    def + (that: Rational) = {
+        val ansnumer = this.numer * that.denom + that.numer * this.denom
+        val ansdenom = this.denom * that.denom
+        new Rational(ansnumer, ansdenom)
+    }
+
+    def - (that: Rational) = {
+        // this + that.neg 
+        val ansnumer = this.numer * that.denom - that.numer * this.denom
+        val ansdenom = this.denom * that.denom
+        new Rational(ansnumer, ansdenom)
+    }
+
+    def * (that: Rational) = {
+        val ansnumer = this.numer * that.numer
+        val ansdenom = this.denom * that.denom
+        new Rational(ansnumer, ansdenom)
+    }
+
+    def / (that: Rational) = {
+        val ansnumer = this.numer * that.denom
+        val ansdenom = this.denom * that.numer
+        new Rational(ansnumer, ansdenom)
+    }
+
+    // def neg: Rational = ...
+    // def unary_- : Rational = ... NOTE THE SPACE BETWEEN - and :
+    def neg() = new Rational(-this.numer, this.denom)
+
+    def &lt; (that: Rational) = 
+        this.numer * that.denom &lt; that.numer * this.denom
+
+    def max(that: Rational) = 
+        if (this.less(that)) that else this
+
+    override def toString() =
+        this.numer + &quot;/&quot; + this.denom
+}</code></pre></div>
+
+<p>The precedence of an operator, is determined by its first character. The following list, shows the characters in increasing order of priority precedence:</p>
+
+<ul>
+<li><code>all letters</code></li>
+<li><code>|</code></li>
+<li><code>^</code></li>
+<li><code>&amp;</code></li>
+<li><code>&lt; &gt;</code></li>
+<li><code>= !</code></li>
+<li><code>:</code></li>
+<li><code>+ -</code></li>
+<li><code>* / %</code></li>
+<li><code>all other special characters</code></li>
+</ul>
+
+<p>So</p>
+
+<div><pre><code class="language-none">a + b ^? c ?^ d less a ==&gt; b | c</code></pre></div>
+
+<p>is parenthesized as:</p>
+
+<div><pre><code class="language-none">a + b ^? c ?^ d less a ==&gt; b | c
+a + b ^? (c ?^ d) less a ==&gt; b | c
+(a + b) ^? (c ?^ d) less a ==&gt; b | c
+(a + b) ^? (c ?^ d) less (a ==&gt; b) | c
+((a + b) ^? (c ?^ d)) less (a ==&gt; b) | c
+((a + b) ^? (c ?^ d)) less ((a ==&gt; b) | c)</code></pre></div>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.java=Prism.languages.extend("clike",{keyword:/\b(abstract|continue|for|new|switch|assert|default|goto|package|synchronized|boolean|do|if|private|this|break|double|implements|protected|throw|byte|else|import|public|throws|case|enum|instanceof|return|transient|catch|extends|int|short|try|char|final|interface|static|void|class|finally|long|strictfp|volatile|const|float|native|super|while)\b/,number:/\b0b[01]+\b|\b0x[\da-f]*\.?[\da-fp\-]+\b|\b\d*\.?\d+(?:e[+-]?\d+)?[df]?\b/i,operator:{pattern:/(^|[^.])(?:\+[+=]?|-[-=]?|!=?|<<?=?|>>?>?=?|==?|&[&=]?|\|[|=]?|\*=?|\/=?|%=?|\^=?|[?:~])/m,lookbehind:!0}}),Prism.languages.insertBefore("java","function",{annotation:{alias:"punctuation",pattern:/(^|[^.])@\w+/,lookbehind:!0}});
+</script>
+
+<script type="text/javascript">
+Prism.languages.scala=Prism.languages.extend("java",{keyword:/<-|=>|\b(?:abstract|case|catch|class|def|do|else|extends|final|finally|for|forSome|if|implicit|import|lazy|match|new|null|object|override|package|private|protected|return|sealed|self|super|this|throw|trait|try|type|val|var|while|with|yield)\b/,string:/"""[\W\w]*?"""|"(?:[^"\\\r\n]|\\.)*"|'(?:[^\\\r\n']|\\.[^\\']*)'/,builtin:/\b(?:String|Int|Long|Short|Byte|Boolean|Double|Float|Char|Any|AnyRef|AnyVal|Unit|Nothing)\b/,number:/\b(?:0x[\da-f]*\.?[\da-f]+|\d*\.?\d+e?\d*[dfl]?)\b/i,symbol:/'[^\d\s\\]\w*/}),delete Prism.languages.scala["class-name"],delete Prism.languages.scala["function"];
+</script>
+
+<script type="text/x-mathjax-config">
+if (typeof MathJaxListener !== 'undefined') {
+  MathJax.Hub.Register.StartupHook('End', function () {
+    MathJaxListener.invokeCallbackForKey_('End');
+  });
+}
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
