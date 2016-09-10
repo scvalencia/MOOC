@@ -1,0 +1,24 @@
+6.090 IAP 05 Lecture 4
+
+notes about the quiz
+
+warmup - quotient
+
+(define (quotient x y) 
+  (if (< x y)
+      0
+      (+ 1 (quotient (- x y) y))))
+
+
+sugared special forms
+ define
+ let
+
+recursive vs iterative
+
+lists
+
+recursive list procedures
+
+
+

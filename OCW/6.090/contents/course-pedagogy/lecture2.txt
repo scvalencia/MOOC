@@ -1,0 +1,36 @@
+6.090 IAP 05 Lecture 2
+
+index card - thing you understand, thing you don't understand
+
+review of previous special forms.  (go over HW?)
+
+realm of make-believe
+
+introduce lambda
+
+concept of procedure as first class entity.
+
+mini-environment model.
+
+define with lambda
+
+examples
+
+procedure writing
+
+proof by induction
+
+sum i=0..n 2^i = 2^(n+1) - 1
+
+recursion - solution to general problem based on an incremental step
+and a base-case.
+
+feeding the class M&Ms
+
+factorial
+
+trace
+
+examples
+
+

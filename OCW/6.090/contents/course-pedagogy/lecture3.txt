@@ -1,0 +1,64 @@
+6.090 IAP 05 Lecture 3
+
+Names
+
+Ask Questions:
+how long for homework
+more breaks during class?
+
+Answer Questions:
+"real scheme programs" instead of line by line
+is scheme used in the real world?
+
+Homework:
+(op green *)
+
+lambda tomfoolery
+ - variables into and out of, lambdas of no arguments
+
+Stepper:
+M-s to start
+<space> to advance
+
+C-x k to kill buffer when done
+
+warm up
+(define abs
+  (lambda (x)
+    (if (< x 0)
+        (- x)
+        x)))
+
+go over even?
+
+more recursive procedures
+
+sum 1..n
+(+ shortcut)
+
+compute e
+
+compute pi?
+
+towers of hanoi
+
+download and load file lec3.scm
+commentary about style
+
+(define move
+  (lambda (disk from to)
+    (format #t "move disc ~A from ~A to ~A~%" disc from to)))
+
+(define (hanoi n from to swap)
+  (if (= n 1)
+      (move n from to)
+      (begin
+       (hanoi (- n 1) from swap to)
+       (move n from to)
+       (hanoi (- n 1) swap to from))))
+
+syntactic sugar - define & lambda
+
+let
+
+guessing game

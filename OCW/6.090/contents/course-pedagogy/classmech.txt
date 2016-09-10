@@ -1,0 +1,118 @@
+6.090 Class Mechanics
+
+Infrastructure
+
+* classroom
+  - blackboard / whiteboard
+  - projector
+  - network (wireless or _very_ convenient drops)
+  - enough space for instructors to reach every student
+
+* lab (for out-of-class help; can be classroom)
+  - network (same as above)
+
+* hardware
+  - a laptop for every student with:
+    + MITScheme
+    + Web browser
+    + Java JRE
+    + net access (wireless or wired)
+    + students on honor system to pay attention during class
+      (not be playing games / IMing)
+
+* web site
+  - post announcements & homeworks
+  - requires Java installed on webserver serving clicker
+
+People
+
+* Instructor
+  - runs class
+  - delivers most of lectures
+  - designs and posts homeworks
+  - authors quiz
+
+* Assistants
+  - answer questions during class
+  - hold lab hours
+  - help grade assignments and quiz
+  - lecture when they feel inspired
+
+Attempt to maintain at least a 1:10 instructor/assistant to student
+ratio (hopefully better).
+
+Class Model
+
+* Handle logistics  (1-2min)
+
+* Review previous class (5min)
+
+  - lectures or homework problems from previous night
+
+* Use clicker to ask general comprehension and pace questions, along
+  with whatever statistics are interesting / entertaining
+  - hours of sleep queries?
+
+(
+ * introduce material
+   - guided discovery style
+     + present situation
+     + ask leading questions to expose desired element
+     + solicit possible solutions
+     + arrive at a correct resolution (not necessarily yours)
+
+   - emphasis equally on HOW to arrive at the answer as what the
+     answer actually is.
+
+   - For right answers:
+
+     + Ask why the answer is correct
+
+     + Ask how the student arrived at the answer
+
+     + Do a test case / thought experiment to verify answer
+
+   - For wrong answers:
+
+     + find the right bits in the wrong answer (approach/reasoning)
+       * tell the student what they did right
+
+     + bring out a test case / thought experiment to verify the answer
+       given
+       * when it fails, it often indicates HOW the answer is wrong
+
+   - Draw pictures / use props / simulate situations
+
+     + make problem solving as concrete as possible
+
+   - Law of Unintended Consequences:
+     Students will learn a pattern from what you show them, not
+     what you want them to learn
+
+     + thus be _precise_ about your examples; not mostly correct, all
+       the way correct.
+
+ * solve problems
+
+   - provide time for students to work problems that cover the new
+     material
+
+   - instructor and assistants wander around unsticking students who
+     get stuck
+
+   - provide more problems than the average student will get through,
+     the advanced students will appreciate them during class and the
+     slower students will appreciate them when they are studying for
+     the quiz.
+
+   - give students enough time to get into problem solving mode (10+
+     minutes)
+
+     + lecture / problem solving time should minimally be 1:1+
+
+) for each topic to cover
+
+* conclude by handing out index cards and asking for:
+  - something the student understands
+  - something the student doesn't understand
+

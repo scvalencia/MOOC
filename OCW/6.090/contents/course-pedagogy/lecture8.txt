@@ -1,0 +1,167 @@
+6.090 IAP 05 Lecture 8
+
+tags
+
+payroll
+  professor
+  gradstudent - overhead on gradstudents
+
+(define (make-professor name salary)
+  (list name salary))
+
+(define (professor-name prof)
+  (first prof))
+
+(define (professor-salary prof)
+  (second prof))
+
+
+(define (make-gradstudent name salary)
+  (list name salary))
+
+(define (gradstudent-name grad)
+  (first grad))
+
+(define (gradstudent-salary grad)
+  (second grad))
+
+(define (total-cost people-list)
+  (if (null? list)
+      0
+      (+ ....?
+         (total-cost (cdr people-list)))))
+
+uh oh
+could use (professor-salary (car people-list))
+or        (gradstudent-salary (car people-list))
+or        (second (car people-list))
+
+all bad.  for different reasons (type analysis)
+
+What if graduate student salarys cost more due to an overhead MIT
+charges (70%).  Now problem is unsolvable.
+
+Need a professor? and gradstudent?
+
+modify abstractions:
+
+(define (make-professor name salary)
+  (list "professor" name salary))
+
+(define (professor-name prof)
+  (second prof))
+
+(define (professor-salary prof)
+  (third prof))
+
+
+(define (make-gradstudent name salary)
+  (list "gradstudent" name salary))
+
+(define (gradstudent-name grad)
+  (second grad))
+
+(define (gradstudent-salary grad)
+  (third grad))
+
+
+now can write and include a professor? in the professor abstraction:
+
+(define (professor? x)
+  (and (pair? x) (string=? (car x) "professor")))
+
+caveat: x must be a list with a string as the first element; ways to
+fix, not relevant for example.
+
+(define (gradstudent? x)
+  (and (pair? x) (string=? (car x) "gradstudent")))
+
+called tagging.
+
+now we can write the procedure:
+
+(define (total-cost people-list)
+  (if (null? people-list)
+      0
+      (if (professor? (car people-list))
+          (+ (professor-salary (car people-list))
+             (total-cost (cdr people-list)))
+	  (if (gradstudent? (car people-list))
+              (+ (* 1.7 (gradstudent-salary (car people-list)))
+                 (total-cost (cdr people-list)))
+              (error "non professor or student in people-list")))))
+
+
+Association lists
+
+(assoc key alist)
+
+(del-assoc key alist)
+
+add association? cons
+
+picture of alist
+
+
+Trees
+
+(define (make-node val left right)
+  (list "node" val left right))
+
+(define (node? x)
+  (and (pair? x) (string=? (car x) "node")))
+
+(define (node-val node)
+  (second node))
+(define (node-left node)
+  (third node))
+(define (node-right node)
+  (fourth node))
+
+(define (leaf? x)
+  (not (node? x)))
+
+;ordering property
+
+
+(define (tree-contains? tree val)
+  (if (leaf? tree)
+      (if (= val tree)
+          val
+          #f)
+      (if (< val (node-val tree))
+          (tree-contains? (node-left tree) val)
+          (tree-contains? (node-right tree) val))))
+
+(define (sum-tree tree)
+  (if (leaf? tree)
+      tree
+      (+ (sum-tree (node-left tree))
+         (sum-tree (node-right tree)))))
+
+;insert-list elem 
+
+(define (insert-list elem lst)
+  (if (null? lst)
+      (list elem)
+      (if (< elem (car lst))
+          (cons elem lst)
+          (cons (car lst) (insert-list elem (cdr lst))))))
+
+(define (avg v1 v2)
+  (/ (+ v1 v2) 2))
+
+(define (insert-tree elem tree)
+  (if (leaf? tree)
+      (if (= elem tree)
+          tree
+          (if (< elem tree)
+              (make-node (avg tree elem) elem tree)
+	      (make-node (avg tree elem) tree elem)))
+      (if (< elem (node-val tree))
+          (make-node (node-val tree)
+                     (insert-tree elem (node-left tree))
+                     (node-right tree))
+          (make-node (node-val tree)
+		     (node-left tree)
+                     (insert-tree elem (node-right tree))))))

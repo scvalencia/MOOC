@@ -1,0 +1,30 @@
+6.090 IAP 05 Lecture 1
+
+Laptop handout
+
+Course policy
+
+Peg-jumping
+
+edwin
+
+glossary
+
+values
+ divided up into types
+ each value has at least one type
+ things that can be manipulated 
+
+primitive operations
+ arith, boolean arith
+
+basic scheme
+ self-evaluating
+ names
+ combinations
+ define
+ if
+
+problems
+
+index card - thing you understand, thing you don't understand, 

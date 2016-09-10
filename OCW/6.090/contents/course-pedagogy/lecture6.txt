@@ -1,0 +1,17 @@
+6.090 IAP 05 Lecture 6
+
+comments on the quiz coverage: through today's material (tho nothing
+serious).
+
+special forms and and or.
+
+basic higher order procedures
+
+types
+
+project: nimrod
+
+-abstractions
+-HOPS
+-lists
+

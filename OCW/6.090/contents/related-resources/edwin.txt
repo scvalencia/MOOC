@@ -1,0 +1,85 @@
+
+
+EDWIN CHEAT SHEET
+(keep under your pillow)
+
+6.090, IAP 2005
+
+
+
+Reading Edwin key combinations:
+	C-x					Ctrl+x
+	M-x					Alt+x
+	C-x, y					Ctrl+x, release both, y
+	C-M-x					Ctrl+Alt+x
+
+Stuff You *Need* to Know:
+	Starting Edwin				Start Menu > MIT Scheme > Edwin
+	Quitting Edwin				C-x, C-c
+	Opening a file				C-x, C-f
+	Closing a file (aka buffer)		C-x, k
+	Evaluate current expression 		C-x, C-e
+	(expression ending just before 
+	insertion point)
+	Evaluate entire buffer
+	(works only on Scheme files!)		M-o
+
+The Edwin Window and Scheme:
+	When you start it, the Edwin window looks like a plain text
+	editor. It has a large blank area for entering text, one black
+	line at the bottom with some information displayed (the modeline),
+	and a blank white line below that (the minibuffer). 
+
+	The text area
+		is where the file you're viewing shows up. You can edit the
+		file here, with the usual keys (up, down, page up, left... you
+		get the idea).
+
+	The modeline
+		displays the name of the current buffer (file), your position
+		in it, and the kind of file Edwin thinks it is (text, scheme
+		code etc.).
+
+	The minibuffer 
+		is where you interact with Edwin's commands. For example, when
+		you press C-x, C-f to open a file, you enter the filename in
+		the minibuffer.
+
+	Edwin is more than just an editor, though. It also features a
+	Scheme evaluator, to which it can send your code. So when you
+	press C-x, C-e at the end of an expression, it gets evaluated by
+	this evaluator (more on evaluators and evaluation in class).
+
+	Try out the key combinations below to see what they do. Don't try
+	to memorize them. Your finger muscles will learn them as time goes
+	on :-)
+
+Inessential Edwin:
+	Editing
+	Marking/selecting text			Go to one end of the block, press 
+					  	C-space, go to the other end. You won't
+						see any visual indication of the 
+						selection.
+	Cut					C-w
+	Copy					M-w
+	Paste					C-y
+	Cut from point to end of like		C-k
+
+	Multiple Windows and Buffers
+	Switch buffer	 		  	C-x, b
+	Switch window				C-x, o
+	Split window vertically			C-x, 2
+	Split window horizontally		C-x, 3
+	Delete current split			C-x, 0
+	Create new frame (window)		C-x, 5, 2
+	Delete current frame			C-x, 5, 0
+
+Interactive Scheme:
+	When you are in the buffer called *scheme*, everything you type goes
+	directly to the evaluator, and the results are displayed below your
+	expressions. When you make an error, the evaluator gives you a set of
+	choices to help you debug your code. Usually, it is best to type (restart 1)
+	at the next prompt to abort the current evaluation, so you can go back and
+	examine your code to see what went wrong. For more advanced debugging tools,
+	talk to an LA.
+

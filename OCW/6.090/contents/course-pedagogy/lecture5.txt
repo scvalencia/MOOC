@@ -1,0 +1,20 @@
+6.090 IAP 05 Lecture 5
+
+list procedures & abstractions
+
+go over list-copy, n-copies
+
+Freddy: go over reverse, both iterative and recursive
+
+general problem solving
+
+reverse
+
+data abstraction
+
+constructor
+selectors
+
+derived types
+ entirely mental!
+
