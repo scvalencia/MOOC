@@ -16,17 +16,19 @@ struct
    but clients need not know about them *)
 (* they _assume_ their inputs are not negative *)
     fun gcd (x,y) =
-       if x = y then x
-       else if x < y then gcd(x,y-x)
-       else gcd(y,x)
+        if x = y then x
+        else if x < y then gcd(x,y-x)
+        else gcd(y,x)
 
     fun reduce r =
         case r of
-	       Whole _     => r
-	       | Frac(x,y) => 
-	                        if  x= 0 then Whole 0
+	        Whole _     => r
+	        | Frac(x,y) => 
+	                        if x = 0 then Whole 0
 	                        else 
-                                let val d = gcd(abs x,y) in (* using invariant 1 *)
+                                let 
+                                    val d = gcd(abs x, y) 
+                                in (* using invariant 1 *)
 		                            if d = y then Whole(x div d) 
                                     else Frac(x div d, y div d) 
 		                        end
@@ -41,15 +43,15 @@ struct
    assuming they hold of the arguments *)
     fun add (r1,r2) = 
         case (r1,r2) of
-	       (Whole(i),Whole(j))     => Whole(i + j)
-	       | (Whole(i),Frac(j,k))  => Frac(j + k * i, k)
-	       | (Frac(j,k),Whole(i))  => Frac(j + k * i, k)
-	       | (Frac(a,b),Frac(c,d)) => reduce (Frac(a * d + b * c, b * d))
+	        (Whole(i),Whole(j))     => Whole(i + j)
+	        | (Whole(i),Frac(j,k))  => Frac(j + k * i, k)
+	        | (Frac(j,k),Whole(i))  => Frac(j + k * i, k)
+	        | (Frac(a,b),Frac(c,d)) => reduce (Frac(a * d + b * c, b * d))
 
 (* given invariant, prints in reduced form *)
     fun toString r =
         case r of
-	       Whole i     => Int.toString i
-	       | Frac(a,b) => (Int.toString a) ^ "/" ^ (Int.toString b)
+	        Whole i     => Int.toString i
+	        | Frac(a,b) => (Int.toString a) ^ "/" ^ (Int.toString b)
 
 end

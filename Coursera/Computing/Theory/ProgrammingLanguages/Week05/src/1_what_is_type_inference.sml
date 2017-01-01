@@ -7,7 +7,7 @@ fun f x = (* infer val f : int -> int *)
     then 42 
     else x * 2
 (*
-fun g x = (* report type error *) 
+fun g x = 
     if x > 3
     then true 
     else x * 2
