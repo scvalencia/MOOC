@@ -1,4 +1,4 @@
-class Staff {
+class Staff :  {
 
 private:
     std::string title;
