@@ -2,7 +2,6 @@
 #include <string>
 #include "ta.hpp"
 
-
 int main(int argc, char** argv) {
 
     TA ta;
